@@ -157,7 +157,7 @@
 
 [Ppis]
   gUbaConfigDatabasePpiGuid
-  gDynamicSiLibraryPpiGuid                  ## CONSUMES
+#  gDynamicSiLibraryPpiGuid                  ## CONSUMES
 
 [Guids]
   gPlatformGpioInitDataGuid
@@ -174,4 +174,4 @@
   gPeiPlatformUbaOcConfigDataGuid
 
 [Depex]
-  gDynamicSiLibraryPpiGuid
+ # gDynamicSiLibraryPpiGuid
