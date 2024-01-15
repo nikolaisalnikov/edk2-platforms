@@ -108,6 +108,15 @@ BoardInitDxeDriverEntry (
           );
         ASSERT_EFI_ERROR (Status);
         break;
+    case TypeMyBoard:
+      Status = gBS->InstallProtocolInterface (
+        &Handle,
+        &gEfiPlatformTypeMyBoardProtocolGuid,
+        EFI_NATIVE_INTERFACE,
+        NULL
+        );
+      ASSERT_EFI_ERROR (Status);
+      break;
 
     default:
       // CAN'T GO TO HERE.
