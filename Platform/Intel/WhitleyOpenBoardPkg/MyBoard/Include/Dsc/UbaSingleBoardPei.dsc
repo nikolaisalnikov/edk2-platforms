@@ -31,6 +31,6 @@ $(RP_PKG)/Uba/BoardInit/Pei/BoardInitPei.inf {
 #
 # Platform TypeBoardPortTemplate
 #
-$(RP_PKG)/$(BOARD_NAME)/Uba/TypeBoardPortTemplate/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
-$(RP_PKG)/$(BOARD_NAME)/Uba/TypeBoardPortTemplate/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
-$(RP_PKG)/$(BOARD_NAME)/Uba/TypeBoardPortTemplate/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf
+$(RP_PKG)/$(BOARD_NAME)/Uba/TypeMyBoard/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
+$(RP_PKG)/$(BOARD_NAME)/Uba/TypeMyBoard/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
+$(RP_PKG)/$(BOARD_NAME)/Uba/TypeMyBoard/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf
