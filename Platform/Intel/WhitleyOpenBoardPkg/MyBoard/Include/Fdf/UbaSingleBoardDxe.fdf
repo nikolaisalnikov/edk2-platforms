@@ -7,6 +7,6 @@
 # SPDX-License-Identifier: BSD-2-Clause-Patent
 ##
 
-INF  $(RP_PKG)/$(BOARD_NAME)/Uba/MyBoard/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
-INF  $(RP_PKG)/$(BOARD_NAME)/Uba/MyBoard/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
-INF  $(RP_PKG)/$(BOARD_NAME)/Uba/MyBoard/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf
+INF  $(RP_PKG)/$(BOARD_NAME)/Uba/TypeMyBoard/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
+INF  $(RP_PKG)/$(BOARD_NAME)/Uba/TypeMyBoard/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
+INF  $(RP_PKG)/$(BOARD_NAME)/Uba/TypeMyBoard/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf

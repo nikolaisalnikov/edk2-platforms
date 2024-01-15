@@ -42,4 +42,4 @@
   gUbaConfigDatabaseProtocolGuid
 
 [Depex]
-  gEfiPlatformTypeBoardPortTemplateProtocolGuid
+  gEfiPlatformTypeMyBoardProtocolGuid
