@@ -69,7 +69,7 @@
   DEFINE BOARD_NAME                   = TucanaBoard
   PLATFORM_GUID                       = 905d6302-4261-4495-b40b-8705cb6ed8a3
   OUTPUT_DIRECTORY                    = Build/$(RP_PKG)
-  SUPPORTED_ARCHITECTURES             = IA32|X64
+  SUPPORTED_ARCHITECTURES             = X64
   BUILD_TARGETS                       = DEBUG|RELEASE
   FLASH_DEFINITION                    = $(RP_PKG)/$(BOARD_NAME)/PlatformPkg.fdf
 
