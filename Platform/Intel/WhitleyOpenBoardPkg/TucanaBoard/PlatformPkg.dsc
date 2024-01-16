@@ -92,7 +92,7 @@
 
 !include WhitleyOpenBoardPkg/$(BOARD_NAME)/Include/Dsc/UbaSingleBoardPei.dsc
 
-[Components.IA32]
+[Components]
   UefiCpuPkg/SecCore/SecCore.inf
 
   !include MinPlatformPkg/Include/Dsc/CorePeiInclude.dsc
@@ -152,7 +152,6 @@
     !endif
   }
 
-[Components.X64]
   !include MinPlatformPkg/Include/Dsc/CoreDxeInclude.dsc
 
   $(RP_PKG)/Platform/Dxe/PlatformType/PlatformType.inf
