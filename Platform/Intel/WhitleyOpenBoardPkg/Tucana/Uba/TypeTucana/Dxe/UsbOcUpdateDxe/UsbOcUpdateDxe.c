@@ -106,7 +106,7 @@ UsbOcUpdateEntry (
   EFI_STATUS                          Status;
   UBA_CONFIG_DATABASE_PROTOCOL        *UbaConfigProtocol = NULL;
 
-  DEBUG((DEBUG_INFO, "UBA:UsbOcUpdate-TypeBoardPortTemplate\n"));
+  DEBUG((DEBUG_INFO, "UBA:UsbOcUpdate-TypeTucana\n"));
   Status = gBS->LocateProtocol (
                   &gUbaConfigDatabaseProtocolGuid,
                   NULL,

@@ -12,8 +12,8 @@
 
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = TypeBoardPortTemplatePeiBoardInitLib
-  FILE_GUID                      = 14074de7-ed3e-4f58-a19c-b461656af3e0
+  BASE_NAME                      = TypeTucanaPeiBoardInitLib
+  FILE_GUID=FBDB1136-B478-11EE-8FE7-13FFCBFD9FB6
   MODULE_TYPE                    = PEIM
   VERSION_STRING                 = 1.0
   LIBRARY_CLASS                  = NULL|PEIM

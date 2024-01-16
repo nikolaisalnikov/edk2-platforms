@@ -29,7 +29,7 @@ $(RP_PKG)/Uba/BoardInit/Pei/BoardInitPei.inf {
 
 [Components.X64]
 #
-# Platform TypeBoardPortTemplate
+# Platform TypeTucana
 #
 $(RP_PKG)/$(BOARD_NAME)/Uba/TypeTucana/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
 $(RP_PKG)/$(BOARD_NAME)/Uba/TypeTucana/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf

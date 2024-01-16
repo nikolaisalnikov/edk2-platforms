@@ -18,7 +18,7 @@
 
 #define GPIO_SKL_H_GPP_B20      0x01010014
 
-VOID TypeBoardPortTemplatePlatformUpdateVrIdAddress (VOID);
+VOID TypeTucanaPlatformUpdateVrIdAddress (VOID);
 
 /**
   Update WilsonCity IMON SVID Information
@@ -26,7 +26,7 @@ VOID TypeBoardPortTemplatePlatformUpdateVrIdAddress (VOID);
   retval N/A
 **/
 VOID
-TypeBoardPortTemplatePlatformUpdateImonAddress (
+TypeTucanaPlatformUpdateImonAddress (
   VOID
   )
 {
@@ -53,7 +53,7 @@ TypeBoardPortTemplatePlatformUpdateImonAddress (
   retval N/A
 **/
 VOID
-TypeBoardPortTemplatePlatformUpdateVrIdAddress (
+TypeTucanaPlatformUpdateVrIdAddress (
   VOID
   )
 {
@@ -97,7 +97,7 @@ TypeBoardPortTemplatePlatformUpdateVrIdAddress (
 }
 
 EFI_STATUS
-TypeBoardPortTemplatePlatformPcdUpdateCallback (
+TypeTucanaPlatformPcdUpdateCallback (
   VOID
 )
 {
@@ -108,12 +108,12 @@ TypeBoardPortTemplatePlatformPcdUpdateCallback (
   UINTN     Size;
   UINTN     PlatformFeatureFlag = 0;
 
-  CHAR16    PlatformName[]   = L"TypeBoardPortTemplate";
+  CHAR16    PlatformName[]   = L"TypeTucana";
   UINTN     PlatformNameSize = 0;
   EFI_STATUS Status;
 
   //#Integer for BoardID, must match the SKU number and be unique.
-  Status = PcdSet16S (PcdOemSkuBoardID                      , TypeBoardPortTemplate);
+  Status = PcdSet16S (PcdOemSkuBoardID                      , TypeTucana);
   ASSERT_EFI_ERROR(Status);
   if (EFI_ERROR(Status)) {
     return Status;
@@ -233,7 +233,7 @@ TypeBoardPortTemplatePlatformPcdUpdateCallback (
   }
 
   DEBUG ((DEBUG_INFO, "Uba Callback: PlatformPcdUpdateCallback is called!\n"));
-  Status = TypeBoardPortTemplatePlatformUpdateAcpiTablePcds ();
+  Status = TypeTucanaPlatformUpdateAcpiTablePcds ();
   //# BMC Pcie Port Number
   PcdSet8S (PcdOemSkuBmcPciePortNumber, 5);
   ASSERT_EFI_ERROR(Status);
@@ -243,20 +243,20 @@ TypeBoardPortTemplatePlatformPcdUpdateCallback (
   ASSERT_EFI_ERROR(Status);
 
   //Update IMON Address
-  TypeBoardPortTemplatePlatformUpdateImonAddress ();
+  TypeTucanaPlatformUpdateImonAddress ();
 
   return Status;
 }
 
-PLATFORM_PCD_UPDATE_TABLE    TypeBoardPortTemplatePcdUpdateTable =
+PLATFORM_PCD_UPDATE_TABLE    TypeTucanaPcdUpdateTable =
 {
   PLATFORM_PCD_UPDATE_SIGNATURE,
   PLATFORM_PCD_UPDATE_VERSION,
-  TypeBoardPortTemplatePlatformPcdUpdateCallback
+  TypeTucanaPlatformPcdUpdateCallback
 };
 
 EFI_STATUS
-TypeBoardPortTemplateInstallPcdData (
+TypeTucanaInstallPcdData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 )
 {
@@ -265,8 +265,8 @@ TypeBoardPortTemplateInstallPcdData (
   Status = UbaConfigPpi->AddData (
                                  UbaConfigPpi,
                                  &gPlatformPcdConfigDataGuid,
-                                 &TypeBoardPortTemplatePcdUpdateTable,
-                                 sizeof(TypeBoardPortTemplatePcdUpdateTable)
+                                 &TypeTucanaPcdUpdateTable,
+                                 sizeof(TypeTucanaPcdUpdateTable)
                                  );
 
   return Status;

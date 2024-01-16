@@ -24,7 +24,7 @@
 
 EFI_STATUS
 EFIAPI
-TypeBoardPortTemplatePeiBoardInitLibConstructor (
+TypeTucanaPeiBoardInitLibConstructor (
   IN EFI_PEI_FILE_HANDLE     FileHandle,
   IN CONST EFI_PEI_SERVICES  **PeiServices
   )
@@ -43,9 +43,9 @@ TypeBoardPortTemplatePeiBoardInitLibConstructor (
   }
   PlatformInfo  = GET_GUID_HOB_DATA(GuidHob);
 
-  if (PlatformInfo->BoardId == TypeBoardPortTemplate) {
+  if (PlatformInfo->BoardId == TypeTucana) {
 
-    DEBUG ((DEBUG_INFO, "PEI UBA init BoardId 0x%X: BoardPortTemplate\n", PlatformInfo->BoardId));
+    DEBUG ((DEBUG_INFO, "PEI UBA init BoardId 0x%X: Tucana\n", PlatformInfo->BoardId));
 
     // Socket 0 has SMT DIMM connector, Socket 1 has PTH DIMM connector
     for (SocketIndex = 0; SocketIndex < MAX_SOCKET; SocketIndex++) {
@@ -88,37 +88,37 @@ TypeBoardPortTemplatePeiBoardInitLibConstructor (
                        );
     ASSERT_EFI_ERROR (Status);
 
-    Status = TypeBoardPortTemplateInstallGpioData (UbaConfigPpi);
+    Status = TypeTucanaInstallGpioData (UbaConfigPpi);
     if (EFI_ERROR(Status)) {
       return Status;
     }
 
-    Status = TypeBoardPortTemplateInstallPcdData (UbaConfigPpi);
+    Status = TypeTucanaInstallPcdData (UbaConfigPpi);
     if (EFI_ERROR(Status)) {
       return Status;
     }
 
-    Status = TypeBoardPortTemplateInstallSoftStrapData (UbaConfigPpi);
+    Status = TypeTucanaInstallSoftStrapData (UbaConfigPpi);
     if (EFI_ERROR(Status)) {
       return Status;
     }
 
-    Status = TypeBoardPortTemplatePchEarlyUpdate (UbaConfigPpi);
+    Status = TypeTucanaPchEarlyUpdate (UbaConfigPpi);
     if (EFI_ERROR(Status)) {
       return Status;
     }
 
-    Status = TypeBoardPortTemplatePlatformUpdateUsbOcMappings (UbaConfigPpi);
+    Status = TypeTucanaPlatformUpdateUsbOcMappings (UbaConfigPpi);
     if (EFI_ERROR(Status)) {
       return Status;
     }
 
-    Status = TypeBoardPortTemplateInstallSlotTableData (UbaConfigPpi);
+    Status = TypeTucanaInstallSlotTableData (UbaConfigPpi);
     if (EFI_ERROR(Status)) {
       return Status;
     }
 
-    Status = TypeBoardPortTemplateInstallKtiEparamData (UbaConfigPpi);
+    Status = TypeTucanaInstallKtiEparamData (UbaConfigPpi);
     if (EFI_ERROR(Status)) {
       return Status;
     }
@@ -145,9 +145,9 @@ TypeBoardPortTemplatePeiBoardInitLibConstructor (
     }
 
     //
-    //  TypeBoardPortTemplateIioPortBifurcationInit will use PlatformInfo->InterposerType for PPO.
+    //  TypeTucanaIioPortBifurcationInit will use PlatformInfo->InterposerType for PPO.
     //
-    Status = TypeBoardPortTemplateIioPortBifurcationInit (UbaConfigPpi);
+    Status = TypeTucanaIioPortBifurcationInit (UbaConfigPpi);
     if (EFI_ERROR(Status)) {
       return Status;
     }

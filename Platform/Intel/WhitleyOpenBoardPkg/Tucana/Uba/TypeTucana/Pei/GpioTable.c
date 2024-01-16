@@ -269,7 +269,7 @@ static GPIO_INIT_CONFIG mGpioTable [] =
 };
 
 EFI_STATUS
-TypeBoardPortTemplateInstallGpioData (
+TypeTucanaInstallGpioData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 )
 {

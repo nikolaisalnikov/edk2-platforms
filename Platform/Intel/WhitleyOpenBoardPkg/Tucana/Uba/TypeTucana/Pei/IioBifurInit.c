@@ -156,7 +156,7 @@ UpdateIioConfig (
   return EFI_SUCCESS;
 }
 
-PLATFORM_IIO_CONFIG_UPDATE_TABLE_EX  TypeBoardPortTemplateIioConfigTable =
+PLATFORM_IIO_CONFIG_UPDATE_TABLE_EX  TypeTucanaIioConfigTable =
 {
   PLATFORM_IIO_CONFIG_UPDATE_SIGNATURE,
   PLATFORM_IIO_CONFIG_UPDATE_VERSION_2,
@@ -178,7 +178,7 @@ PLATFORM_IIO_CONFIG_UPDATE_TABLE_EX  TypeBoardPortTemplateIioConfigTable =
 
 **/
 EFI_STATUS
-TypeBoardPortTemplateIioPortBifurcationInit (
+TypeTucanaIioPortBifurcationInit (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 )
 {
@@ -197,8 +197,8 @@ TypeBoardPortTemplateIioPortBifurcationInit (
   //
   // This is config for ICX
   //
-  PlatformIioInfoPtr = &TypeBoardPortTemplateIioConfigTable;
-  PlatformIioInfoSize = sizeof(TypeBoardPortTemplateIioConfigTable);
+  PlatformIioInfoPtr = &TypeTucanaIioConfigTable;
+  PlatformIioInfoSize = sizeof(TypeTucanaIioConfigTable);
 
   Status = UbaConfigPpi->AddData (
                                  UbaConfigPpi,

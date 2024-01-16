@@ -9,7 +9,7 @@
 [defines]
   INF_VERSION                    = 0x00010005
   BASE_NAME                      = UsbOcUpdateDxeTucana
-  FILE_GUID                      = C92F1DF7-206C-46A7-B7D4-0F9B18E0E70A
+  FILE_GUID=FBDB1136-B478-11EE-8FE7-13FFCBFD9FB6
   MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
   ENTRY_POINT                    = UsbOcUpdateEntry
@@ -42,4 +42,4 @@
   gUbaConfigDatabaseProtocolGuid
 
 [Depex]
-  gEfiPlatformTypeBoardPortTemplateProtocolGuid
+  gEfiPlatformTypeTucanaProtocolGuid

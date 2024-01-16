@@ -17,7 +17,7 @@
 #include <Ppi/DynamicSiLibraryPpi.h>
 
 EFI_STATUS
-TypeBoardPortTemplatePchLanConfig (
+TypeTucanaPchLanConfig (
   IN SYSTEM_CONFIGURATION         *SystemConfig
 )
 {
@@ -37,7 +37,7 @@ TypeBoardPortTemplatePchLanConfig (
 }
 
 EFI_STATUS
-TypeBoardPortTemplateOemInitLateHook (
+TypeTucanaOemInitLateHook (
   IN SYSTEM_CONFIGURATION         *SystemConfig
 )
 {
@@ -45,12 +45,12 @@ TypeBoardPortTemplateOemInitLateHook (
 }
 
 
-PLATFORM_PCH_EARLY_UPDATE_TABLE  TypeBoardPortTemplatePchEarlyUpdateTable =
+PLATFORM_PCH_EARLY_UPDATE_TABLE  TypeTucanaPchEarlyUpdateTable =
 {
   PLATFORM_PCH_EARLY_UPDATE_SIGNATURE,
   PLATFORM_PCH_EARLY_UPDATE_VERSION,
-  TypeBoardPortTemplatePchLanConfig,
-  TypeBoardPortTemplateOemInitLateHook
+  TypeTucanaPchLanConfig,
+  TypeTucanaOemInitLateHook
 };
 
 
@@ -65,7 +65,7 @@ PLATFORM_PCH_EARLY_UPDATE_TABLE  TypeBoardPortTemplatePchEarlyUpdateTable =
 **/
 EFI_STATUS
 EFIAPI
-TypeBoardPortTemplatePchEarlyUpdate(
+TypeTucanaPchEarlyUpdate(
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
   )
 {
@@ -84,8 +84,8 @@ TypeBoardPortTemplatePchEarlyUpdate(
   Status = UbaConfigPpi->AddData (
                                UbaConfigPpi,
                                &gPlatformPchEarlyConfigDataGuid,
-                               &TypeBoardPortTemplatePchEarlyUpdateTable,
-                               sizeof(TypeBoardPortTemplatePchEarlyUpdateTable)
+                               &TypeTucanaPchEarlyUpdateTable,
+                               sizeof(TypeTucanaPchEarlyUpdateTable)
                                );
 
   return Status;

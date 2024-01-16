@@ -23,55 +23,55 @@
 #include <GpioPinsSklH.h>
 #include <Ppi/DynamicSiLibraryPpi.h>
 
-// TypeBoardPortTemplate
+// TypeTucana
 EFI_STATUS
-TypeBoardPortTemplatePlatformUpdateUsbOcMappings (
+TypeTucanaPlatformUpdateUsbOcMappings (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 );
 
 EFI_STATUS
-TypeBoardPortTemplatePlatformUpdateAcpiTablePcds (
+TypeTucanaPlatformUpdateAcpiTablePcds (
   VOID
 );
 
 EFI_STATUS
-TypeBoardPortTemplateInstallClockgenData (
+TypeTucanaInstallClockgenData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 );
 
 EFI_STATUS
-TypeBoardPortTemplateInstallPcdData (
+TypeTucanaInstallPcdData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 );
 
 EFI_STATUS
-TypeBoardPortTemplatePchEarlyUpdate (
+TypeTucanaPchEarlyUpdate (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 );
 
 EFI_STATUS
-TypeBoardPortTemplateIioPortBifurcationInit (
+TypeTucanaIioPortBifurcationInit (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 );
 
 EFI_STATUS
-TypeBoardPortTemplateInstallSlotTableData (
+TypeTucanaInstallSlotTableData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 );
 
 EFI_STATUS
-TypeBoardPortTemplateInstallKtiEparamData (
+TypeTucanaInstallKtiEparamData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 );
 
-// TypeBoardPortTemplate
+// TypeTucana
 EFI_STATUS
-TypeBoardPortTemplateInstallGpioData (
+TypeTucanaInstallGpioData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 ) ;
 
 EFI_STATUS
-TypeBoardPortTemplateInstallSoftStrapData (
+TypeTucanaInstallSoftStrapData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 );
 #endif // _PEI_BOARD_INIT_PEIM_H_

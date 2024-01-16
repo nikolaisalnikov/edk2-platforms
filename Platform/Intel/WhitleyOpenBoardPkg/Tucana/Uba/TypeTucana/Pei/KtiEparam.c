@@ -31,7 +31,7 @@ ALL_LANES_EPARAM_LINK_INFO  KtiIcxAllLanesEparamTable[] = {
   {0x1, (1 << SPEED_REC_96GT) | (1 << SPEED_REC_104GT) | (1 << SPEED_REC_112GT), (1 << KTI_LINK2), 0x2C34373F, ADAPTIVE_CTLE}
 };
 
-PLATFORM_KTI_EPARAM_UPDATE_TABLE  TypeBoardPortTemplateIcxKtiEparamUpdate = {
+PLATFORM_KTI_EPARAM_UPDATE_TABLE  TypeTucanaIcxKtiEparamUpdate = {
   PLATFORM_KTIEP_UPDATE_SIGNATURE,
   PLATFORM_KTIEP_UPDATE_VERSION,
   KtiIcxAllLanesEparamTable,
@@ -42,7 +42,7 @@ PLATFORM_KTI_EPARAM_UPDATE_TABLE  TypeBoardPortTemplateIcxKtiEparamUpdate = {
 
 
 EFI_STATUS
-TypeBoardPortTemplateInstallKtiEparamData (
+TypeTucanaInstallKtiEparamData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 )
 {
@@ -58,8 +58,8 @@ TypeBoardPortTemplateInstallKtiEparamData (
   Status = UbaConfigPpi->AddData (
                                  UbaConfigPpi,
                                  &gPlatformKtiEparamUpdateDataGuid,
-                                 &TypeBoardPortTemplateIcxKtiEparamUpdate,
-                                 sizeof(TypeBoardPortTemplateIcxKtiEparamUpdate)
+                                 &TypeTucanaIcxKtiEparamUpdate,
+                                 sizeof(TypeTucanaIcxKtiEparamUpdate)
                                  );
 
   return Status;

@@ -1,5 +1,5 @@
 ## @file PlatformPkg.dsc
-# BoardPortTemplate reference platform single board build target.
+# Tucana reference platform single board build target.
 #
 #
 # @copyright
@@ -78,7 +78,7 @@
 #
 
 [PcdsFixedAtBuild]
-  gPlatformTokenSpaceGuid.PcdBoardId|0x84 # TypeBoardPortTemplate
+  gPlatformTokenSpaceGuid.PcdBoardId|0x80 # TypeTucana
 
 #
 # Increase debug message levels
@@ -88,6 +88,3 @@
 #!include $(RP_PKG)/Include/Dsc/EnableAllDebugMessages.dsc
 
 !include $(RP_PKG)/$(BOARD_NAME)/Include/Dsc/UbaSingleBoardPei.dsc
-
-[Components]
-  ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf

@@ -42,7 +42,7 @@ typedef enum {
   Bw5_Addr_Max
 } BW5_ADDRESS;
 
-static UINT8 TypeBoardPortTemplatePchPciSlotImpementedTableData[] = {
+static UINT8 TypeTucanaPchPciSlotImpementedTableData[] = {
     PCI_DEVICE_ON_BOARD_FALSE,  // Root Port 0
     PCI_DEVICE_ON_BOARD_FALSE,  // Root Port 1
     PCI_DEVICE_ON_BOARD_FALSE,  // Root Port 2
@@ -66,7 +66,7 @@ static UINT8 TypeBoardPortTemplatePchPciSlotImpementedTableData[] = {
 };
 
 UINT8
-GetTypeBoardPortTemplateIOU0Setting (
+GetTypeTucanaIOU0Setting (
   UINT8  IOU0Data
 )
 {
@@ -78,7 +78,7 @@ GetTypeBoardPortTemplateIOU0Setting (
 }
 
 UINT8
-GetTypeBoardPortTemplateIOU2Setting (
+GetTypeTucanaIOU2Setting (
   UINT8  SkuPersonalityType,
   UINT8  IOU2Data
 )
@@ -86,39 +86,39 @@ GetTypeBoardPortTemplateIOU2Setting (
   return IOU2Data;
 }
 
-static IIO_BROADWAY_ADDRESS_DATA_ENTRY   SlotTypeBoardPortTemplateBroadwayTable[] = {
+static IIO_BROADWAY_ADDRESS_DATA_ENTRY   SlotTypeTucanaBroadwayTable[] = {
     {Iio_Socket0, Iio_Iou2, Bw5_Addr_0 },
     {Iio_Socket1, Iio_Iou1, Bw5_Addr_2},
     {Iio_Socket1, Iio_Iou0, Bw5_Addr_1 },
 };
 
 
-PLATFORM_SLOT_UPDATE_TABLE  TypeBoardPortTemplateSlotTable =
+PLATFORM_SLOT_UPDATE_TABLE  TypeTucanaSlotTable =
 {
   PLATFORM_SLOT_UPDATE_SIGNATURE,
   PLATFORM_SLOT_UPDATE_VERSION,
 
-  SlotTypeBoardPortTemplateBroadwayTable,
-  GetTypeBoardPortTemplateIOU0Setting,
+  SlotTypeTucanaBroadwayTable,
+  GetTypeTucanaIOU0Setting,
   0
 };
 
-PLATFORM_SLOT_UPDATE_TABLE2  TypeBoardPortTemplateSlotTable2 =
+PLATFORM_SLOT_UPDATE_TABLE2  TypeTucanaSlotTable2 =
 {
   PLATFORM_SLOT_UPDATE_SIGNATURE,
   PLATFORM_SLOT_UPDATE_VERSION,
 
-  SlotTypeBoardPortTemplateBroadwayTable,
-  GetTypeBoardPortTemplateIOU0Setting,
+  SlotTypeTucanaBroadwayTable,
+  GetTypeTucanaIOU0Setting,
   0,
-  GetTypeBoardPortTemplateIOU2Setting
+  GetTypeTucanaIOU2Setting
 };
 
-PLATFORM_PCH_PCI_SLOT_IMPLEMENTED_UPDATE_TABLE TypeBoardPortTemplatePchPciSlotImplementedTable = {
+PLATFORM_PCH_PCI_SLOT_IMPLEMENTED_UPDATE_TABLE TypeTucanaPchPciSlotImplementedTable = {
   PLATFORM_SLOT_UPDATE_SIGNATURE,
   PLATFORM_SLOT_UPDATE_VERSION,
 
-  TypeBoardPortTemplatePchPciSlotImpementedTableData
+  TypeTucanaPchPciSlotImpementedTableData
 };
 
 /**
@@ -131,7 +131,7 @@ PLATFORM_PCH_PCI_SLOT_IMPLEMENTED_UPDATE_TABLE TypeBoardPortTemplatePchPciSlotIm
 
 **/
 EFI_STATUS
-TypeBoardPortTemplateInstallSlotTableData (
+TypeTucanaInstallSlotTableData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 )
 {
@@ -140,8 +140,8 @@ TypeBoardPortTemplateInstallSlotTableData (
   Status = UbaConfigPpi->AddData (
                                  UbaConfigPpi,
                                  &gPlatformSlotDataGuid,
-                                 &TypeBoardPortTemplateSlotTable,
-                                 sizeof(TypeBoardPortTemplateSlotTable)
+                                 &TypeTucanaSlotTable,
+                                 sizeof(TypeTucanaSlotTable)
                                  );
   if (EFI_ERROR(Status)) {
     return Status;
@@ -150,8 +150,8 @@ TypeBoardPortTemplateInstallSlotTableData (
   Status = UbaConfigPpi->AddData (
                                  UbaConfigPpi,
                                  &gPlatformSlotDataGuid2,
-                                 &TypeBoardPortTemplateSlotTable2,
-                                 sizeof(TypeBoardPortTemplateSlotTable2)
+                                 &TypeTucanaSlotTable2,
+                                 sizeof(TypeTucanaSlotTable2)
                                  );
   if (EFI_ERROR(Status)) {
     return Status;
@@ -160,8 +160,8 @@ TypeBoardPortTemplateInstallSlotTableData (
   Status = UbaConfigPpi->AddData (
                                  UbaConfigPpi,
                                  &gPlatformPciSlotImplementedGuid,
-                                 &TypeBoardPortTemplatePchPciSlotImplementedTable,
-                                 sizeof(TypeBoardPortTemplatePchPciSlotImplementedTable)
+                                 &TypeTucanaPchPciSlotImplementedTable,
+                                 sizeof(TypeTucanaPchPciSlotImplementedTable)
                                  );
   if (EFI_ERROR(Status)) {
     return Status;

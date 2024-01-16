@@ -15,7 +15,7 @@
 #include <ConfigBlock/UsbConfig.h>
 #include <ConfigBlock/Usb2PhyConfig.h>
 
-USB_OVERCURRENT_PIN TypeBoardPortTemplateUsb20OverCurrentMappings[PCH_MAX_USB2_PORTS] = {
+USB_OVERCURRENT_PIN TypeTucanaUsb20OverCurrentMappings[PCH_MAX_USB2_PORTS] = {
                           UsbOverCurrentPin0,
                           UsbOverCurrentPin1,
                           UsbOverCurrentPin1,
@@ -34,7 +34,7 @@ USB_OVERCURRENT_PIN TypeBoardPortTemplateUsb20OverCurrentMappings[PCH_MAX_USB2_P
                           UsbOverCurrentPinSkip
                        };
 
-USB_OVERCURRENT_PIN TypeBoardPortTemplateUsb30OverCurrentMappings[PCH_MAX_USB3_PORTS] = {
+USB_OVERCURRENT_PIN TypeTucanaUsb30OverCurrentMappings[PCH_MAX_USB3_PORTS] = {
                           UsbOverCurrentPin0,
                           UsbOverCurrentPin1,
                           UsbOverCurrentPin1,
@@ -47,7 +47,7 @@ USB_OVERCURRENT_PIN TypeBoardPortTemplateUsb30OverCurrentMappings[PCH_MAX_USB3_P
                           UsbOverCurrentPinSkip
                        };
 
-USB2_PHY_PARAMETERS         TypeBoardPortTemplateUsb20AfeParams[PCH_H_XHCI_MAX_USB2_PHYSICAL_PORTS] = {
+USB2_PHY_PARAMETERS         TypeTucanaUsb20AfeParams[PCH_H_XHCI_MAX_USB2_PHYSICAL_PORTS] = {
                         {3, 0, 3, 1},   // PP0
                         {5, 0, 3, 1},   // PP1
                         {3, 0, 3, 1},   // PP2
@@ -65,28 +65,28 @@ USB2_PHY_PARAMETERS         TypeBoardPortTemplateUsb20AfeParams[PCH_H_XHCI_MAX_U
                       };
 
 EFI_STATUS
-TypeBoardPortTemplatePlatformUsbOcUpdateCallback (
+TypeTucanaPlatformUsbOcUpdateCallback (
   IN OUT   USB_OVERCURRENT_PIN   **Usb20OverCurrentMappings,
   IN OUT   USB_OVERCURRENT_PIN   **Usb30OverCurrentMappings,
   IN OUT   USB2_PHY_PARAMETERS        **Usb20AfeParams
 )
 {
-  *Usb20OverCurrentMappings   = &TypeBoardPortTemplateUsb20OverCurrentMappings[0];
-  *Usb30OverCurrentMappings   = &TypeBoardPortTemplateUsb30OverCurrentMappings[0];
+  *Usb20OverCurrentMappings   = &TypeTucanaUsb20OverCurrentMappings[0];
+  *Usb30OverCurrentMappings   = &TypeTucanaUsb30OverCurrentMappings[0];
 
-  *Usb20AfeParams   = TypeBoardPortTemplateUsb20AfeParams;
+  *Usb20AfeParams   = TypeTucanaUsb20AfeParams;
   return EFI_SUCCESS;
 }
 
-PLATFORM_USBOC_UPDATE_TABLE  TypeBoardPortTemplateUsbOcUpdate =
+PLATFORM_USBOC_UPDATE_TABLE  TypeTucanaUsbOcUpdate =
 {
    PLATFORM_USBOC_UPDATE_SIGNATURE,
    PLATFORM_USBOC_UPDATE_VERSION,
-   TypeBoardPortTemplatePlatformUsbOcUpdateCallback
+   TypeTucanaPlatformUsbOcUpdateCallback
 };
 
 EFI_STATUS
-TypeBoardPortTemplatePlatformUpdateUsbOcMappings (
+TypeTucanaPlatformUpdateUsbOcMappings (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
 )
 {
@@ -116,8 +116,8 @@ TypeBoardPortTemplatePlatformUpdateUsbOcMappings (
   Status = UbaConfigPpi->AddData (
                                  UbaConfigPpi,
                                  &gPeiPlatformUbaOcConfigDataGuid,
-                                 &TypeBoardPortTemplateUsbOcUpdate,
-                                 sizeof(TypeBoardPortTemplateUsbOcUpdate)
+                                 &TypeTucanaUsbOcUpdate,
+                                 sizeof(TypeTucanaUsbOcUpdate)
                                  );
 
   return Status;

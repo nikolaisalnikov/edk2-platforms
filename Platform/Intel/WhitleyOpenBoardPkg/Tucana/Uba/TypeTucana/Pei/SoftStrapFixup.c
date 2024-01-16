@@ -10,7 +10,7 @@
 #include "PeiBoardInit.h"
 #include <Library/UbaSoftStrapUpdateLib.h>
 
-PLATFORM_PCH_SOFTSTRAP_FIXUP_ENTRY  TypeBoardPortTemplateSoftStrapTable[] =
+PLATFORM_PCH_SOFTSTRAP_FIXUP_ENTRY  TypeTucanaSoftStrapTable[] =
 {
 // SoftStrapNumber, LowBit, BitLength, Value
   {3,    1, 1, 0x1 },    // Intel QuickAssist Endpoint 2 (EP[2]) Primary Mux Select
@@ -72,7 +72,7 @@ PLATFORM_PCH_SOFTSTRAP_FIXUP_ENTRY  TypeBoardPortTemplateSoftStrapTable[] =
 };
 
 UINT32
-TypeBoardPortTemplateSystemBoardRevIdValue (VOID)
+TypeTucanaSystemBoardRevIdValue (VOID)
 {
   EFI_HOB_GUID_TYPE       *GuidHob;
   EFI_PLATFORM_INFO       *PlatformInfo;
@@ -87,22 +87,22 @@ TypeBoardPortTemplateSystemBoardRevIdValue (VOID)
 }
 
 VOID
-TypeBoardPortTemplatePlatformSpecificUpdate (
+TypeTucanaPlatformSpecificUpdate (
   IN OUT  UINT8                 *FlashDescriptorCopy
   )
 {
 }
 
-PLATFORM_PCH_SOFTSTRAP_UPDATE  TypeBoardPortTemplateSoftStrapUpdate =
+PLATFORM_PCH_SOFTSTRAP_UPDATE  TypeTucanaSoftStrapUpdate =
 {
   PLATFORM_SOFT_STRAP_UPDATE_SIGNATURE,
   PLATFORM_SOFT_STRAP_UPDATE_VERSION,
-  TypeBoardPortTemplateSoftStrapTable,
-  TypeBoardPortTemplatePlatformSpecificUpdate
+  TypeTucanaSoftStrapTable,
+  TypeTucanaPlatformSpecificUpdate
 };
 
 EFI_STATUS
-TypeBoardPortTemplateInstallSoftStrapData (
+TypeTucanaInstallSoftStrapData (
   IN UBA_CONFIG_DATABASE_PPI    *UbaConfigPpi
   )
 {
@@ -111,8 +111,8 @@ TypeBoardPortTemplateInstallSoftStrapData (
   Status = UbaConfigPpi->AddData (
                                  UbaConfigPpi,
                                  &gPlatformPchSoftStrapConfigDataGuid,
-                                 &TypeBoardPortTemplateSoftStrapUpdate,
-                                 sizeof(TypeBoardPortTemplateSoftStrapUpdate)
+                                 &TypeTucanaSoftStrapUpdate,
+                                 sizeof(TypeTucanaSoftStrapUpdate)
                                  );
 
   return Status;

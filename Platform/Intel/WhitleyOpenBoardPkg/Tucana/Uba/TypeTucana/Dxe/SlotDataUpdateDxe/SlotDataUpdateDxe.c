@@ -81,7 +81,7 @@ SlotDataUpdateEntry (
   EFI_STATUS                               Status;
   UBA_CONFIG_DATABASE_PROTOCOL             *UbaConfigProtocol = NULL;
 
-  DEBUG((DEBUG_INFO, "UBA:SlotDataUpdate-TypeBoardPortTemplate\n"));
+  DEBUG((DEBUG_INFO, "UBA:SlotDataUpdate-TypeTucana\n"));
   Status = gBS->LocateProtocol (
                   &gUbaConfigDatabaseProtocolGuid,
                   NULL,
