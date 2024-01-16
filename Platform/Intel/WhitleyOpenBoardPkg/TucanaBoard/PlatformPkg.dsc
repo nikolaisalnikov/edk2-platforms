@@ -88,6 +88,6 @@
 # Several options are provided, last uncommented one will take effect
 #
 !include $(RP_PKG)/Include/Dsc/EnableRichDebugMessages.dsc
-!include $(RP_PKG)/Include/Dsc/EnableAllDebugMessages.dsc
+#!include $(RP_PKG)/Include/Dsc/EnableAllDebugMessages.dsc
 
 !include WhitleyOpenBoardPkg/$(BOARD_NAME)/Include/Dsc/UbaSingleBoardPei.dsc
