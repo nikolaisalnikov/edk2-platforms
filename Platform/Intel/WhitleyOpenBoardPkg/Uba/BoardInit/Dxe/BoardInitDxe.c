@@ -108,10 +108,10 @@ BoardInitDxeDriverEntry (
           );
         ASSERT_EFI_ERROR (Status);
         break;
-    case TypeMyBoard:
+    case TypeTucanaBoard:
       Status = gBS->InstallProtocolInterface (
         &Handle,
-        &gEfiPlatformTypeMyBoardProtocolGuid,
+        &gEfiPlatformTypeTucanaBoardProtocolGuid,
         EFI_NATIVE_INTERFACE,
         NULL
         );
