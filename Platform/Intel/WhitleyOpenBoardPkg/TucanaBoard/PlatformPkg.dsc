@@ -825,9 +825,6 @@
 
   $(PLATFORM_PKG)/FspWrapper/SaveMemoryConfig/SaveMemoryConfig.inf
 
-  $(PLATFORM_SI_BIN_PACKAGE)/CpxMicrocode/MicrocodeUpdates.inf
-  $(PLATFORM_SI_BIN_PACKAGE)/IcxMicrocode/MicrocodeUpdates.inf
-
   MdeModulePkg/Bus/Pci/PciSioSerialDxe/PciSioSerialDxe.inf
   MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
   BoardModulePkg/LegacySioDxe/LegacySioDxe.inf
