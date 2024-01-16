@@ -7,6 +7,6 @@
 # SPDX-License-Identifier: BSD-2-Clause-Patent
 ##
 
-INF  $(RP_PKG)/$(BOARD_NAME)/Uba/Tucana/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
-INF  $(RP_PKG)/$(BOARD_NAME)/Uba/Tucana/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
-INF  $(RP_PKG)/$(BOARD_NAME)/Uba/Tucana/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf
+INF  $(RP_PKG)/$(BOARD_NAME)/Uba/TypeTucana/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
+INF  $(RP_PKG)/$(BOARD_NAME)/Uba/TypeTucana/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
+INF  $(RP_PKG)/$(BOARD_NAME)/Uba/TypeTucana/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf
