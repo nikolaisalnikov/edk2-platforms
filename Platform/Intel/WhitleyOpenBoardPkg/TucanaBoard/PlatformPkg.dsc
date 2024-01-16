@@ -92,3 +92,4 @@
 [Components]
   ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
   UefiCpuPkg/SecCore/SecCore.inf
+  MdeModulePkg/Core/Pei/PeiMain.inf
