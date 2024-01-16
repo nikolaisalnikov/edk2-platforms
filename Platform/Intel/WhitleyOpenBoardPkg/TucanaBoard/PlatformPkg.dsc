@@ -88,6 +88,3 @@
 #!include $(RP_PKG)/Include/Dsc/EnableAllDebugMessages.dsc
 
 !include $(RP_PKG)/$(BOARD_NAME)/Include/Dsc/UbaSingleBoardPei.dsc
-
-[Components]
-  ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
