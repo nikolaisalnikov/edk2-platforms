@@ -637,6 +637,7 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
 
   INF  ShellPkg/Application/Shell/Shell.inf
   INF  ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
+  INF  UefiCpuPkg/SecCore/SecCore.inf
 
   INF  MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
 
