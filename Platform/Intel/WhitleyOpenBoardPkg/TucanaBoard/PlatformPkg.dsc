@@ -71,7 +71,7 @@
   OUTPUT_DIRECTORY                    = Build/$(RP_PKG)
   SUPPORTED_ARCHITECTURES             = X64
   BUILD_TARGETS                       = DEBUG|RELEASE
-  FLASH_DEFINITION                    = $(RP_PKG)/$(BOARD_NAME)/PlatformPkg.fdf
+  FLASH_DEFINITION                    = WhitleyOpenBoardPkg/$(BOARD_NAME)/PlatformPkg.fdf
 
 #
 # Advanced feature selection/enablement
@@ -87,7 +87,7 @@
 # Increase debug message levels
 # Several options are provided, last uncommented one will take effect
 #
-#!include $(RP_PKG)/Include/Dsc/EnableRichDebugMessages.dsc
-#!include $(RP_PKG)/Include/Dsc/EnableAllDebugMessages.dsc
+!include $(RP_PKG)/Include/Dsc/EnableRichDebugMessages.dsc
+!include $(RP_PKG)/Include/Dsc/EnableAllDebugMessages.dsc
 
-!include $(RP_PKG)/$(BOARD_NAME)/Include/Dsc/UbaSingleBoardPei.dsc
+!include WhitleyOpenBoardPkg/$(BOARD_NAME)/Include/Dsc/UbaSingleBoardPei.dsc
