@@ -114,11 +114,7 @@
   $(RP_PKG)/Features/Variable/PlatformVariable/Pei/PlatformVariableInitPei.inf
 
   $(RP_PKG)/Platform/Pei/PlatformInfo/PlatformInfo.inf
-  $(PLATFORM_PKG)/PlatformInit/PlatformInitPei/PlatformInitPreMem.inf {
-    <LibraryClasses>
-      TestPointCheckLib|MinPlatformPkg/Test/Library/TestPointCheckLibNull/TestPointCheckLibNull.inf
-      BoardInitLib|$(RP_PKG)/Library/BoardInitLib/BoardInitPreMemLib.inf
-  }
+
   $(PLATFORM_PKG)/PlatformInit/ReportFv/ReportFvPei.inf
 
   $(PLATFORM_PKG)/PlatformInit/SiliconPolicyPei/SiliconPolicyPeiPreMem.inf{
