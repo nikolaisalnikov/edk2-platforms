@@ -8,14 +8,14 @@
 
 [defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = SlotDataUpdateDxeMyBoard
-  FILE_GUID                      = A29C22DA-2EE0-4a36-A4E5-CCBCEAD1DB8F
+  BASE_NAME                      = IioCfgUpdateDxeTucanaBoard
+  FILE_GUID                      = F11BA6FC-1CE9-4C5E-A39A-F10A3216D1FF
   MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
-  ENTRY_POINT                    = SlotDataUpdateEntry
+  ENTRY_POINT                    = IioCfgUpdateEntry
 
 [sources]
-  SlotDataUpdateDxe.c
+  IioCfgUpdateDxe.c
 
 [LibraryClasses]
   BaseLib
@@ -36,7 +36,10 @@
   WhitleyOpenBoardPkg/PlatformPkg.dec
 
 [Guids]
-  gPlatformSlotDataDxeGuid
+  gPlatformIioConfigDataDxeGuid
+  gPlatformIioConfigDataDxeGuid_1
+  gPlatformIioConfigDataDxeGuid_2
+  gPlatformIioConfigDataDxeGuid_3
 
 [FixedPcd]
   gEfiCpRcPkgTokenSpaceGuid.PcdMaxCpuSocketCount
@@ -45,4 +48,4 @@
   gUbaConfigDatabaseProtocolGuid
 
 [Depex]
-  gEfiPlatformTypeMyBoardProtocolGuid
+  gEfiPlatformTypeTucanaBoardProtocolGuid

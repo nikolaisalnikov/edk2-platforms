@@ -8,14 +8,15 @@
 
 [defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = IioCfgUpdateDxeMyBoard
-  FILE_GUID                      = 4983CB47-56FD-4341-88EC-F0C95B36DF12
+  BASE_NAME                      = UsbOcUpdateDxeTucanaBoard
+  FILE_GUID                      = 8E6F254B-F51D-446A-AF98-1F3BF560D5FC
   MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
-  ENTRY_POINT                    = IioCfgUpdateEntry
+  ENTRY_POINT                    = UsbOcUpdateEntry
 
 [sources]
-  IioCfgUpdateDxe.c
+  UsbOcUpdateDxe.c
+  UsbOcUpdateDxe.h
 
 [LibraryClasses]
   BaseLib
@@ -31,21 +32,14 @@
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
   WhitleySiliconPkg/WhitleySiliconPkg.dec
-  WhitleySiliconPkg/CpRcPkg.dec
   WhitleySiliconPkg/SiliconPkg.dec
   WhitleyOpenBoardPkg/PlatformPkg.dec
 
 [Guids]
-  gPlatformIioConfigDataDxeGuid
-  gPlatformIioConfigDataDxeGuid_1
-  gPlatformIioConfigDataDxeGuid_2
-  gPlatformIioConfigDataDxeGuid_3
-
-[FixedPcd]
-  gEfiCpRcPkgTokenSpaceGuid.PcdMaxCpuSocketCount
+  gDxePlatformUbaOcConfigDataGuid
 
 [Protocols]
   gUbaConfigDatabaseProtocolGuid
 
 [Depex]
-  gEfiPlatformTypeMyBoardProtocolGuid
+  gEfiPlatformTypeTucanaBoardProtocolGuid

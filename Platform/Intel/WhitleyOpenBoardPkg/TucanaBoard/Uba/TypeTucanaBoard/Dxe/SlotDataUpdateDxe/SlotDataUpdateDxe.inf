@@ -8,15 +8,14 @@
 
 [defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = UsbOcUpdateDxeBoardPortTemplate
-  FILE_GUID                      = C92F1DF7-206C-46A7-B7D4-0F9B18E0E70A
+  BASE_NAME                      = SlotDataUpdateDxeTucanaBoard
+  FILE_GUID                      = CC7C50EA-8478-4B46-AD11-C2087B1386E5
   MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
-  ENTRY_POINT                    = UsbOcUpdateEntry
+  ENTRY_POINT                    = SlotDataUpdateEntry
 
 [sources]
-  UsbOcUpdateDxe.c
-  UsbOcUpdateDxe.h
+  SlotDataUpdateDxe.c
 
 [LibraryClasses]
   BaseLib
@@ -32,14 +31,18 @@
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
   WhitleySiliconPkg/WhitleySiliconPkg.dec
+  WhitleySiliconPkg/CpRcPkg.dec
   WhitleySiliconPkg/SiliconPkg.dec
   WhitleyOpenBoardPkg/PlatformPkg.dec
 
 [Guids]
-  gDxePlatformUbaOcConfigDataGuid
+  gPlatformSlotDataDxeGuid
+
+[FixedPcd]
+  gEfiCpRcPkgTokenSpaceGuid.PcdMaxCpuSocketCount
 
 [Protocols]
   gUbaConfigDatabaseProtocolGuid
 
 [Depex]
-  gEfiPlatformTypeMyBoardProtocolGuid
+  gEfiPlatformTypeTucanaBoardProtocolGuid

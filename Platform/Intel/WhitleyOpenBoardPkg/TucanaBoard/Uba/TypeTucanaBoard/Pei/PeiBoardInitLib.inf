@@ -12,12 +12,12 @@
 
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = TypeBoardPortTemplatePeiBoardInitLib
-  FILE_GUID                      = 14074de7-ed3e-4f58-a19c-b461656af3e0
+  BASE_NAME                      = TypeTucanaBoardPeiBoardInitLib
+  FILE_GUID                      = 4E76E5C9-9492-440B-819F-FD9EF02AC173
   MODULE_TYPE                    = PEIM
   VERSION_STRING                 = 1.0
   LIBRARY_CLASS                  = NULL|PEIM
-  CONSTRUCTOR                    = TypeBoardPortTemplatePeiBoardInitLibConstructor
+  CONSTRUCTOR                    = TypeTucanaBoardPeiBoardInitLibConstructor
 
 [LibraryClasses]
   BaseLib
@@ -157,7 +157,7 @@
 
 [Ppis]
   gUbaConfigDatabasePpiGuid
-#  gDynamicSiLibraryPpiGuid                  ## CONSUMES
+  gDynamicSiLibraryPpiGuid                  ## CONSUMES
 
 [Guids]
   gPlatformGpioInitDataGuid
@@ -174,4 +174,4 @@
   gPeiPlatformUbaOcConfigDataGuid
 
 [Depex]
- # gDynamicSiLibraryPpiGuid
+  gDynamicSiLibraryPpiGuid

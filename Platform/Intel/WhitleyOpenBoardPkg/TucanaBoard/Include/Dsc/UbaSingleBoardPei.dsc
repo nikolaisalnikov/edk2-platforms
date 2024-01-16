@@ -29,8 +29,8 @@ $(RP_PKG)/Uba/BoardInit/Pei/BoardInitPei.inf {
 
 [Components.X64]
 #
-# Platform TypeBoardPortTemplate
+# Platform TucanaBoard
 #
-$(RP_PKG)/$(BOARD_NAME)/Uba/TypeMyBoard/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
-$(RP_PKG)/$(BOARD_NAME)/Uba/TypeMyBoard/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
-$(RP_PKG)/$(BOARD_NAME)/Uba/TypeMyBoard/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf
+$(RP_PKG)/$(BOARD_NAME)/Uba/TypeTucanaBoard/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
+$(RP_PKG)/$(BOARD_NAME)/Uba/TypeTucanaBoard/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
+$(RP_PKG)/$(BOARD_NAME)/Uba/TypeTucanaBoard/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf

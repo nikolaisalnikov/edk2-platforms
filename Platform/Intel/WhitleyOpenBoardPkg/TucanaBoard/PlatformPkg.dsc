@@ -9,7 +9,7 @@
 ##
 
 [Defines]
-  PLATFORM_NAME                       = WhitleyOpenBoardPkg
+  PLATFORM_NAME                       = WhitleyOpenBoardPkgTucana
   PEI_ARCH                            = IA32
   DXE_ARCH                            = X64
 
@@ -66,8 +66,8 @@
 !include AdvancedFeaturePkg/Include/AdvancedFeatures.dsc
 
 [Defines]
-  DEFINE BOARD_NAME                   = MyBoard
-  PLATFORM_GUID                       = f3518dd4-5dec-4d2c-9ac9-561121e2628b
+  DEFINE BOARD_NAME                   = TucanaBoard
+  PLATFORM_GUID                       = 905d6302-4261-4495-b40b-8705cb6ed8a3
   OUTPUT_DIRECTORY                    = Build/$(RP_PKG)
   SUPPORTED_ARCHITECTURES             = IA32|X64
   BUILD_TARGETS                       = DEBUG|RELEASE
@@ -78,7 +78,7 @@
 #
 
 [PcdsFixedAtBuild]
-  gPlatformTokenSpaceGuid.PcdBoardId|0x80 # TypeBoardPortTemplate
+  gPlatformTokenSpaceGuid.PcdBoardId|0x80 # TypeTucanaBoard
 
 #
 # Increase debug message levels

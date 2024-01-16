@@ -67,6 +67,7 @@ typedef enum {
   TypeAmericanPass,
   EndOfEfiPlatformTypeEnum,
   TypeMyBoard,
+  TypeTucanaBoard,
   //
   // Vendor board range currently starts at 0x80
   //

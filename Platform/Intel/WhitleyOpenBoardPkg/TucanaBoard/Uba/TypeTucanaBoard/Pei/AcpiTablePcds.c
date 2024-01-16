@@ -40,7 +40,7 @@ TypeBoardPortTemplatePlatformUpdateAcpiTablePcds (
   //#
   Size = AsciiStrSize (AcpiName10nm);
   Status = PcdSetPtrS (PcdOemSkuAcpiName , &Size, AcpiName10nm);
-  DEBUG ((DEBUG_INFO, "%a TypeBoardPortTemplate ICX\n", __FUNCTION__));
+  DEBUG ((DEBUG_INFO, "%a TucanaBoard ICX\n", __FUNCTION__));
   ASSERT_EFI_ERROR (Status);
 
   Size = AsciiStrSize (OemTableIdXhci);
