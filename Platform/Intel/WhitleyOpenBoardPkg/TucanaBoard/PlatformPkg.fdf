@@ -620,6 +620,8 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
   INF  MinPlatformPkg/PlatformInit/PlatformInitPei/PlatformInitPostMem.inf
 
   INF  MdeModulePkg/Universal/MonotonicCounterRuntimeDxe/MonotonicCounterRuntimeDxe.inf
+  INF  MdeModulePkg/Core/Pei/PeiMain.inf
+  INF  MdeModulePkg/Universal/PCD/Pei/Pcd.inf
   INF  RuleOverride = UI MdeModulePkg/Application/UiApp/UiApp.inf
   INF  MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenuApp.inf
   INF  MdeModulePkg/Universal/BdsDxe/BdsDxe.inf

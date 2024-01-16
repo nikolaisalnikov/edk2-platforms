@@ -93,3 +93,4 @@
   ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
   UefiCpuPkg/SecCore/SecCore.inf
   MdeModulePkg/Core/Pei/PeiMain.inf
+  MdeModulePkg/Universal/PCD/Pei/Pcd.inf
