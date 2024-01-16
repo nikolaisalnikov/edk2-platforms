@@ -91,3 +91,4 @@
 
 [Components]
   ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
+  UefiCpuPkg/SecCore/SecCore.inf
