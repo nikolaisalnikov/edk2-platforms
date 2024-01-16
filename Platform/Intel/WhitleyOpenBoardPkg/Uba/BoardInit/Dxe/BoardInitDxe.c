@@ -59,6 +59,16 @@ BoardInitDxeDriverEntry (
   //later, the PEIM will be loaded by the dependency.
   switch(PlatformType)
   {
+    case Tucana:
+      Status = gBS->InstallProtocolInterface (
+        &Handle,
+        &gEfiPlatformTypeMyBoardProtocolGuid,
+        EFI_NATIVE_INTERFACE,
+        NULL
+        );
+      ASSERT_EFI_ERROR (Status);
+      break;
+
     case TypeWilsonCityRP:
       Status = gBS->InstallProtocolInterface (
             &Handle,
@@ -108,19 +118,9 @@ BoardInitDxeDriverEntry (
           );
         ASSERT_EFI_ERROR (Status);
         break;
-
     default:
       // CAN'T GO TO HERE.
       ASSERT (FALSE);
-   case Tucana:
-      Status = gBS->InstallProtocolInterface (
-        &Handle,
-        &gEfiPlatformTypeTucanaProtocolGuid,
-        EFI_NATIVE_INTERFACE,
-        NULL
-        );
-      ASSERT_EFI_ERROR (Status);
-      break;
 
   return Status;
   }
