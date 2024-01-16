@@ -94,4 +94,4 @@
   UefiCpuPkg/SecCore/SecCore.inf
   MdeModulePkg/Core/Pei/PeiMain.inf
   MdeModulePkg/Universal/PCD/Pei/Pcd.inf
-  Platform/Intel/WhitleyOpenBoardPkg/Universal/PeiExStatusCodeRouter/ExReportStatusCodeRouterPei.inf
+  edk2-platform/Platform/Intel/WhitleyOpenBoardPkg/Universal/PeiExStatusCodeRouter/ExReportStatusCodeRouterPei.inf
