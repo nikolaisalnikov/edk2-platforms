@@ -745,6 +745,7 @@
 
 [Components.X64]
   !include MinPlatformPkg/Include/Dsc/CoreDxeInclude.dsc
+  ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
 
   $(RP_PKG)/Platform/Dxe/PlatformType/PlatformType.inf
 

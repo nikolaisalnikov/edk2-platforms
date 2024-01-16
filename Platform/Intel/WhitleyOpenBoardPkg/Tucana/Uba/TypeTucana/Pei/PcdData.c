@@ -113,7 +113,7 @@ TypeTucanaPlatformPcdUpdateCallback (
   EFI_STATUS Status;
 
   //#Integer for BoardID, must match the SKU number and be unique.
-  Status = PcdSet16S (PcdOemSkuBoardID                      , TypeTucana);
+  Status = PcdSet16S (PcdOemSkuBoardID                      , Tucana);
   ASSERT_EFI_ERROR(Status);
   if (EFI_ERROR(Status)) {
     return Status;
