@@ -122,6 +122,6 @@ BoardInitDxeDriverEntry (
       // CAN'T GO TO HERE.
       ASSERT (FALSE);
 
-  return Status;
   }
+  return Status;
 }
