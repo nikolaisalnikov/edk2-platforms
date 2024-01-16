@@ -43,7 +43,7 @@ TypeTucanaPeiBoardInitLibConstructor (
   }
   PlatformInfo  = GET_GUID_HOB_DATA(GuidHob);
 
-  if (PlatformInfo->BoardId == TypeTucana) {
+  if (PlatformInfo->BoardId == Tucana) {
 
     DEBUG ((DEBUG_INFO, "PEI UBA init BoardId 0x%X: Tucana\n", PlatformInfo->BoardId));
 
