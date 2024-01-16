@@ -25,7 +25,7 @@
   gMinPlatformPkgTokenSpaceGuid.PcdStopAfterDebugInit                       |FALSE
   gMinPlatformPkgTokenSpaceGuid.PcdStopAfterMemInit                         |FALSE
   gMinPlatformPkgTokenSpaceGuid.PcdBootToShellOnly                          |FALSE
-  gMinPlatformPkgTokenSpaceGuid.PcdPerformanceEnable                        |TRUE
+  gMinPlatformPkgTokenSpaceGuid.PcdPerformanceEnable                        |FALSE
 
   #
   # Debugging features
@@ -91,3 +91,154 @@
 #!include $(RP_PKG)/Include/Dsc/EnableAllDebugMessages.dsc
 
 !include WhitleyOpenBoardPkg/$(BOARD_NAME)/Include/Dsc/UbaSingleBoardPei.dsc
+
+[Components.IA32]
+  UefiCpuPkg/SecCore/SecCore.inf
+
+  !include MinPlatformPkg/Include/Dsc/CorePeiInclude.dsc
+
+  MdeModulePkg/Universal/PCD/Pei/Pcd.inf {
+    <LibraryClasses>
+      #
+      # Beware of circular dependencies on PCD if you want to use another DebugLib instance.
+      #
+      PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
+      NULL|$(FSP_BIN_PKG)/Library/FspPcdListLibNull/FspPcdListLibNull.inf                 # Include FSP DynamicEx PCD
+      NULL|$(FSP_BIN_PKG)/Library/FspPcdListLibNull/FspPcdListLibNullFvLateSilicon.inf    # Include FvLateSilicon DynamicEx PCD
+      NULL|$(FSP_BIN_PKG)/Library/FspPcdListLibNull/FspPcdListLibNullFvLateOpenBoard.inf  # Include FvLateBoard DynamicEx PCD
+  }
+  $(RP_PKG)/Universal/PeiExStatusCodeRouter/ExReportStatusCodeRouterPei.inf
+  $(RP_PKG)/Universal/PeiExStatusCodeHandler/ExStatusCodeHandlerPei.inf
+  $(RP_PKG)/Universal/PeiInterposerToSvidMap/PeiInterposerToSvidMap.inf
+
+  $(RP_PKG)/Features/Variable/PlatformVariable/Pei/PlatformVariableInitPei.inf
+
+  $(RP_PKG)/Platform/Pei/PlatformInfo/PlatformInfo.inf
+  $(PLATFORM_PKG)/PlatformInit/PlatformInitPei/PlatformInitPreMem.inf {
+    <LibraryClasses>
+      TestPointCheckLib|MinPlatformPkg/Test/Library/TestPointCheckLibNull/TestPointCheckLibNull.inf
+      BoardInitLib|$(RP_PKG)/Library/BoardInitLib/BoardInitPreMemLib.inf
+  }
+  $(PLATFORM_PKG)/PlatformInit/ReportFv/ReportFvPei.inf
+
+  $(PLATFORM_PKG)/PlatformInit/SiliconPolicyPei/SiliconPolicyPeiPreMem.inf{
+    <LibraryClasses>
+      SiliconWorkaroundLib|WhitleySiliconPkg/Library/SiliconWorkaroundLibNull/SiliconWorkaroundLibNull.inf
+  }
+  $(RP_PKG)/Platform/Pei/EmulationPlatformInit/EmulationPlatformInit.inf
+  $(PLATFORM_PKG)/PlatformInit/PlatformInitPei/PlatformInitPostMem.inf {
+    <LibraryClasses>
+      TestPointCheckLib|MinPlatformPkg/Test/Library/TestPointCheckLibNull/TestPointCheckLibNull.inf
+      BoardInitLib|$(PLATFORM_PKG)/PlatformInit/Library/BoardInitLibNull/BoardInitLibNull.inf
+  }
+
+  IntelFsp2WrapperPkg/FspmWrapperPeim/FspmWrapperPeim.inf
+!if ($(FSP_MODE) == 0)
+  IntelFsp2WrapperPkg/FspsWrapperPeim/FspsWrapperPeim.inf
+  $(RP_PKG)/Platform/Pei/DummyPchSpi/DummyPchSpi.inf
+!endif
+
+  $(RP_PKG)/BiosInfo/BiosInfo.inf
+
+  WhitleySiliconPkg/Pch/SouthClusterLbg/MultiPch/Pei/MultiPchPei.inf
+  UefiCpuPkg/PiSmmCommunication/PiSmmCommunicationPei.inf
+
+  UefiCpuPkg/CpuMpPei/CpuMpPei.inf
+
+  UefiCpuPkg/Universal/Acpi/S3Resume2Pei/S3Resume2Pei.inf {
+    <LibraryClasses>
+    !if gMinPlatformPkgTokenSpaceGuid.PcdPerformanceEnable == TRUE
+      TimerLib|UefiCpuPkg/Library/SecPeiDxeTimerLibUefiCpu/SecPeiDxeTimerLibUefiCpu.inf
+    !endif
+  }
+
+[Components.X64]
+  !include MinPlatformPkg/Include/Dsc/CoreDxeInclude.dsc
+
+  $(RP_PKG)/Platform/Dxe/PlatformType/PlatformType.inf
+
+  MinPlatformPkg/Test/TestPointDumpApp/TestPointDumpApp.inf
+
+  MdeModulePkg/Universal/SectionExtractionDxe/SectionExtractionDxe.inf
+  MdeModulePkg/Universal/Acpi/S3SaveStateDxe/S3SaveStateDxe.inf
+  MdeModulePkg/Universal/Acpi/BootScriptExecutorDxe/BootScriptExecutorDxe.inf
+
+  MdeModulePkg/Universal/LockBox/SmmLockBox/SmmLockBox.inf
+  UefiCpuPkg/PiSmmCommunication/PiSmmCommunicationSmm.inf
+
+  ShellPkg/Application/Shell/Shell.inf {
+      <LibraryClasses>
+      ShellCommandLib|ShellPkg/Library/UefiShellCommandLib/UefiShellCommandLib.inf
+      NULL|ShellPkg/Library/UefiShellLevel2CommandsLib/UefiShellLevel2CommandsLib.inf
+      NULL|ShellPkg/Library/UefiShellLevel1CommandsLib/UefiShellLevel1CommandsLib.inf
+      NULL|ShellPkg/Library/UefiShellLevel3CommandsLib/UefiShellLevel3CommandsLib.inf
+      NULL|ShellPkg/Library/UefiShellDriver1CommandsLib/UefiShellDriver1CommandsLib.inf
+      NULL|ShellPkg/Library/UefiShellDebug1CommandsLib/UefiShellDebug1CommandsLib.inf
+      NULL|ShellPkg/Library/UefiShellInstall1CommandsLib/UefiShellInstall1CommandsLib.inf
+      NULL|ShellPkg/Library/UefiShellNetwork1CommandsLib/UefiShellNetwork1CommandsLib.inf
+      HandleParsingLib|ShellPkg/Library/UefiHandleParsingLib/UefiHandleParsingLib.inf
+      PrintLib|MdePkg/Library/BasePrintLib/BasePrintLib.inf
+      BcfgCommandLib|ShellPkg/Library/UefiShellBcfgCommandLib/UefiShellBcfgCommandLib.inf
+      IoLib|MdePkg/Library/BaseIoLibIntrinsic/BaseIoLibIntrinsic.inf
+
+    <PcdsFixedAtBuild>
+      gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0xFF
+      gEfiShellPkgTokenSpaceGuid.PcdShellLibAutoInitialize|FALSE
+      gEfiMdePkgTokenSpaceGuid.PcdUefiLibMaxPrintBufferSize|8000
+  }
+
+  $(RP_PKG)/Cpu/Dxe/PlatformCpuPolicy/PlatformCpuPolicy.inf
+  UefiCpuPkg/CpuDxe/CpuDxe.inf
+  UefiCpuPkg/CpuS3DataDxe/CpuS3DataDxe.inf
+
+  $(RP_PKG)/Features/Pci/Dxe/PciHostBridge/PciHostBridge.inf
+  IntelSiliconPkg/Feature/Flash/SpiFvbService/SpiFvbServiceSmm.inf
+
+  $(RP_PKG)/Features/Pci/Dxe/PciPlatform/PciPlatform.inf
+
+!if $(CPUTARGET) == "ICX"
+  $(RP_PKG)/Features/Acpi/AcpiPlatform/AcpiPlatform.inf
+  $(RP_PKG)/Features/Acpi/AcpiTables/AcpiTables10nm.inf
+!endif
+  $(RP_PKG)/Features/AcpiVtd/AcpiVtd.inf
+
+  $(PLATFORM_PKG)/Acpi/AcpiSmm/AcpiSmm.inf
+
+  $(PLATFORM_PKG)/PlatformInit/PlatformInitDxe/PlatformInitDxe.inf {
+  <LibraryClasses>
+    BoardInitLib|$(RP_PKG)/Library/BoardInitLib/BoardInitDxeLib.inf
+  }
+  $(RP_PKG)/Platform/Dxe/S3NvramSave/S3NvramSave.inf {
+!if ($(FSP_MODE) == 0)
+    <BuildOptions>
+        *_*_*_CC_FLAGS  = -D FSP_API_MODE
+!endif
+  }
+
+  $(PLATFORM_PKG)/FspWrapper/SaveMemoryConfig/SaveMemoryConfig.inf
+
+  $(PLATFORM_SI_BIN_PACKAGE)/CpxMicrocode/MicrocodeUpdates.inf
+  $(PLATFORM_SI_BIN_PACKAGE)/IcxMicrocode/MicrocodeUpdates.inf
+
+  MdeModulePkg/Bus/Pci/PciSioSerialDxe/PciSioSerialDxe.inf
+  MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
+  BoardModulePkg/LegacySioDxe/LegacySioDxe.inf
+  BoardModulePkg/BoardBdsHookDxe/BoardBdsHookDxe.inf
+
+  MdeModulePkg/Bus/Pci/NvmExpressDxe/NvmExpressDxe.inf
+
+  MdeModulePkg/Universal/PlatformDriOverrideDxe/PlatformDriOverrideDxe.inf
+
+  MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
+  MdeModulePkg/Universal/SmbiosMeasurementDxe/SmbiosMeasurementDxe.inf
+  MdeModulePkg/Bus/Ata/AtaBusDxe/AtaBusDxe.inf
+  MdeModulePkg/Bus/Ata/AtaAtapiPassThru/AtaAtapiPassThru.inf
+
+  #
+  # SiliconPkg code for Platform Integration are defined here
+  #
+!if $(CPUTARGET) == "CPX"
+  DEFINE CPU_CPX_SUPPORT                     = TRUE
+!else
+  DEFINE CPU_CPX_SUPPORT                     = FALSE
+!endif
