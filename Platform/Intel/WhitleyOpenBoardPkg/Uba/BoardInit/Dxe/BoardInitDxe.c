@@ -112,7 +112,6 @@ BoardInitDxeDriverEntry (
     default:
       // CAN'T GO TO HERE.
       ASSERT (FALSE);
-  }
    case TypeTucana:
       Status = gBS->InstallProtocolInterface (
         &Handle,
@@ -124,4 +123,5 @@ BoardInitDxeDriverEntry (
       break;
 
   return Status;
+  }
 }
