@@ -13,7 +13,7 @@
   PEI_ARCH                            = IA32
   DXE_ARCH                            = X64
 
-!include $(RP_PKG)/PlatformPkg.dsc
+!include WhitleyOpenBoardPkg/PlatformPkg.dsc
 
 #
 # Feature enable/disable flags
@@ -91,10 +91,3 @@
 #!include $(RP_PKG)/Include/Dsc/EnableAllDebugMessages.dsc
 
 !include $(RP_PKG)/$(BOARD_NAME)/Include/Dsc/UbaSingleBoardPei.dsc
-
-[Components]
-  ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
-  UefiCpuPkg/SecCore/SecCore.inf
-  MdeModulePkg/Core/Pei/PeiMain.inf
-  MdeModulePkg/Universal/PCD/Pei/Pcd.inf
-  edk2-platforms/Platform/Intel/WhitleyOpenBoardPkg/Universal/PeiExStatusCodeRouter/ExReportStatusCodeRouterPei.inf
