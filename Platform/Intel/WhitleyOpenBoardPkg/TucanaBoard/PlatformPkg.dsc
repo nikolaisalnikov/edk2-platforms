@@ -264,3 +264,8 @@
 !else
   DEFINE CPU_CPX_SUPPORT                     = FALSE
 !endif
+
+[LibraryClasses.common.DXE_DRIVER, LibraryClasses.common.UEFI_DRIVER, LibraryClasses.common.UEFI_APPLICATION]
+  ResetSystemLib|MdeModulePkg/Library/DxeResetSystemLib/DxeResetSystemLib.inf
+[LibraryClasses.common.DXE_RUNTIME_DRIVER]
+  ResetSystemLib|MdeModulePkg/Library/RuntimeResetSystemLib/RuntimeResetSystemLib.inf
