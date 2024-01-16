@@ -62,7 +62,7 @@ BoardInitDxeDriverEntry (
     case Tucana:
       Status = gBS->InstallProtocolInterface (
         &Handle,
-        &gEfiPlatformTypeMyBoardProtocolGuid,
+        &gEfiPlatformTypeTucanaProtocolGuid,
         EFI_NATIVE_INTERFACE,
         NULL
         );
