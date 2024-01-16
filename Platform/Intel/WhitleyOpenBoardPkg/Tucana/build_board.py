@@ -72,6 +72,25 @@ def pre_build_ex(config, functions):
     if not os.path.exists(out_file_dir):
         os.mkdir(out_file_dir)
 
+    aml_offsets_split = os.path.split(os.path.normpath(config["AML_OFFSETS_PATH"]))
+    command.append("-p")
+    command.append(os.path.normpath(config["AML_OFFSETS_PATH"]) + '.dsc')
+    command.append("-m")
+    command.append(os.path.join(aml_offsets_split[0], aml_offsets_split[1], aml_offsets_split[1] + '.inf'))
+    command.append("-y")
+    command.append(os.path.join(config["WORKSPACE"], "PreBuildReport.txt"))
+    command.append("--log=" + os.path.join(config["WORKSPACE"], "PreBuild.log"))
+
+    shell = True
+    if os.name == "posix":  # linux
+        shell = False
+
+    _, _, _, code = execute_script(command, config, shell=shell)
+    if code != 0:
+        print(" ".join(command))
+        print("Error re-generating PlatformOffset header files")
+        sys.exit(1)
+
     command = [sys.executable,
                os.path.join(config["MIN_PACKAGE_TOOLS"], "AmlGenOffset", "AmlGenOffset.py"),
                "-d", "--aml_filter", config["AML_FILTER"],
