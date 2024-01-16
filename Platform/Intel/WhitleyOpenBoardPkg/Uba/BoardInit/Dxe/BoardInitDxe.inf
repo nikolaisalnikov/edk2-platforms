@@ -65,6 +65,7 @@
   gEfiPlatformTypeCooperCityRPProtocolGuid               #PRODUCER
   gEfiPlatformTypeJunctionCityProtocolGuid               #PRODUCER
   gEfiPlatformTypeAowandaProtocolGuid                    #PRODUCER
+  gEfiPlatformTypeTucanaProtocolGuid
 
 [FixedPcd]
   gEfiCpRcPkgTokenSpaceGuid.PcdMaxCpuSocketCount
