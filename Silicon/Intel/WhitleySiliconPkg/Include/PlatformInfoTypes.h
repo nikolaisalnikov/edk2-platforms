@@ -72,7 +72,8 @@ typedef enum {
   TypeBoardPortTemplate = 0x80,               // 0x80
   TypeJunctionCity,
   TypeAowanda,
-  EndOfVendorPlatformTypeEnum
+  EndOfVendorPlatformTypeEnum,
+  Tucana = 0x84
 } EFI_PLATFORM_TYPE;
 
 #define TypePlatformUnknown       0xFF

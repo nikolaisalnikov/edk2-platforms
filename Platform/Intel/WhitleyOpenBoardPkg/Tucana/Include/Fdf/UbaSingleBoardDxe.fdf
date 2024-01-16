@@ -1,0 +1,12 @@
+## @file UbaSingleBoardDxe.fdf
+# FDF include file for a single UBA board build
+#
+# @copyright
+# Copyright 2020 Intel Corporation.
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+
+INF  $(RP_PKG)/$(BOARD_NAME)/Uba/Tucana/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
+INF  $(RP_PKG)/$(BOARD_NAME)/Uba/Tucana/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
+INF  $(RP_PKG)/$(BOARD_NAME)/Uba/Tucana/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf

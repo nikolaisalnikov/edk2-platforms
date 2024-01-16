@@ -113,6 +113,15 @@ BoardInitDxeDriverEntry (
       // CAN'T GO TO HERE.
       ASSERT (FALSE);
   }
+   case TypeTucana:
+      Status = gBS->InstallProtocolInterface (
+        &Handle,
+        &gEfiPlatformTypeTucanaProtocolGuid,
+        EFI_NATIVE_INTERFACE,
+        NULL
+        );
+      ASSERT_EFI_ERROR (Status);
+      break;
 
   return Status;
 }
