@@ -636,11 +636,7 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
   INF  MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe.inf
 
   INF  ShellPkg/Application/Shell/Shell.inf
-  INF ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf {
-    <BuildOptions>
-      MODULE_TYPE = DXE_DRIVER
-      ARCH        = X64
-  }
+  INF  ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
 
   INF  MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
 
