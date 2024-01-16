@@ -80,6 +80,9 @@
 [PcdsFixedAtBuild]
   gPlatformTokenSpaceGuid.PcdBoardId|0x80 # TypeTucanaBoard
 
+[PcdsDynamicExHii]
+  gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|L"Timeout"|gEfiGlobalVariableGuid|0x0|5 # Variable: L"Timeout"
+
 #
 # Increase debug message levels
 # Several options are provided, last uncommented one will take effect
