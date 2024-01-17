@@ -29,15 +29,8 @@
   PEI_ARCH                            = IA32
   DXE_ARCH                            = X64
 
-!if $(CPUTARGET) == "CPX"
-  DEFINE FSP_BIN_PKG            = CedarIslandFspBinPkg
-  DEFINE IIO_INSTANCE           = Skx
-!elseif $(CPUTARGET) == "ICX"
   DEFINE FSP_BIN_PKG            = WhitleyFspBinPkg
   DEFINE IIO_INSTANCE           = Icx
-!else
-  DEFINE IIO_INSTANCE           = UnknownCpu
-!endif
 
 #
 # MinPlatform common include for required feature PCD

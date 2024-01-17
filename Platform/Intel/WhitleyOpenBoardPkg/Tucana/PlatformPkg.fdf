@@ -18,11 +18,7 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdMicrocodeOffsetInFv              = 0x90 # F
 
 DEFINE VPD_HEADER_SIZE = 0x00000090
 
-!if $(FSP_MODE) == 0
-  DEFINE FSP_BIN_DIR = Api
-!else
-  DEFINE FSP_BIN_DIR = Dispatch
-!endif
+DEFINE FSP_BIN_DIR = Dispatch
 
 #
 # Note: FlashNv PCD naming conventions are as follows:
@@ -400,10 +396,10 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
   !include MinPlatformPkg/Include/Fdf/CommonSpiFvHeaderInfo.fdf
   FvNameGuid         = 6522280D-28F9-4131-ADC4-F40EBFA45864
 
-  INF  UefiCpuPkg/SecCore/SecCore.inf
-  INF  MdeModulePkg/Core/Pei/PeiMain.inf
+  //INF  UefiCpuPkg/SecCore/SecCore.inf
+  //INF  MdeModulePkg/Core/Pei/PeiMain.inf
 
-  INF  MdeModulePkg/Universal/PCD/Pei/Pcd.inf
+  //INF  MdeModulePkg/Universal/PCD/Pei/Pcd.inf
   INF  WhitleyOpenBoardPkg/Universal/PeiExStatusCodeRouter/ExReportStatusCodeRouterPei.inf
   INF  WhitleyOpenBoardPkg/Universal/PeiExStatusCodeHandler/ExStatusCodeHandlerPei.inf
 
