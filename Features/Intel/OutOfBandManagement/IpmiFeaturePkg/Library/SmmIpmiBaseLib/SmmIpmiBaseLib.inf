@@ -22,7 +22,7 @@
 
 [LibraryClasses]
   DebugLib
- # MmServicesTableLib
+  MmServicesTableLib
 
 [Protocols]
   gSmmIpmiTransportProtocolGuid
