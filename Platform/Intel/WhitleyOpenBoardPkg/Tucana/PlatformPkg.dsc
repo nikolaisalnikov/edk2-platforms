@@ -63,6 +63,8 @@
   gUserAuthFeaturePkgTokenSpaceGuid.PcdUserAuthenticationFeatureEnable      |FALSE
   gVirtualKeyboardFeaturePkgTokenSpaceGuid.PcdVirtualKeyboardFeatureEnable  |FALSE
 
+  gAsfFeaturePkgTokenSpaceGuid.PcdAsfFeatureEnable |FALSE
+
 !include AdvancedFeaturePkg/Include/AdvancedFeatures.dsc
 
 [Defines]
