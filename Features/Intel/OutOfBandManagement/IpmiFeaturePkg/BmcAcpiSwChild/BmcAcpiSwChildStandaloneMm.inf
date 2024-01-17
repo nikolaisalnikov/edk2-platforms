@@ -29,7 +29,7 @@
 [LibraryClasses]
   # StandaloneMmDriverEntryPoint
   DebugLib
-  MmServicesTableLib
+  # MmServicesTableLib
   ServerManagementLib
   IpmiBaseLib
 
