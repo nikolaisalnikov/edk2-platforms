@@ -683,66 +683,6 @@
   DebugLib|MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf
   PeiLib|MinPlatformPkg/Library/PeiLib/PeiLib.inf
 
-[Components.IA32]
-  UefiCpuPkg/SecCore/SecCore.inf
-
-  !include MinPlatformPkg/Include/Dsc/CorePeiInclude.dsc
-
-  MdeModulePkg/Universal/PCD/Pei/Pcd.inf {
-    <LibraryClasses>
-      #
-      # Beware of circular dependencies on PCD if you want to use another DebugLib instance.
-      #
-      PcdLib|MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
-      NULL|$(FSP_BIN_PKG)/Library/FspPcdListLibNull/FspPcdListLibNull.inf                 # Include FSP DynamicEx PCD
-      NULL|$(FSP_BIN_PKG)/Library/FspPcdListLibNull/FspPcdListLibNullFvLateSilicon.inf    # Include FvLateSilicon DynamicEx PCD
-      NULL|$(FSP_BIN_PKG)/Library/FspPcdListLibNull/FspPcdListLibNullFvLateOpenBoard.inf  # Include FvLateBoard DynamicEx PCD
-  }
-  $(RP_PKG)/Universal/PeiExStatusCodeRouter/ExReportStatusCodeRouterPei.inf
-  $(RP_PKG)/Universal/PeiExStatusCodeHandler/ExStatusCodeHandlerPei.inf
-  $(RP_PKG)/Universal/PeiInterposerToSvidMap/PeiInterposerToSvidMap.inf
-
-  $(RP_PKG)/Features/Variable/PlatformVariable/Pei/PlatformVariableInitPei.inf
-
-  $(RP_PKG)/Platform/Pei/PlatformInfo/PlatformInfo.inf
-  $(PLATFORM_PKG)/PlatformInit/PlatformInitPei/PlatformInitPreMem.inf {
-    <LibraryClasses>
-      TestPointCheckLib|MinPlatformPkg/Test/Library/TestPointCheckLibNull/TestPointCheckLibNull.inf
-      BoardInitLib|$(RP_PKG)/Library/BoardInitLib/BoardInitPreMemLib.inf
-  }
-  $(PLATFORM_PKG)/PlatformInit/ReportFv/ReportFvPei.inf
-
-  $(PLATFORM_PKG)/PlatformInit/SiliconPolicyPei/SiliconPolicyPeiPreMem.inf{
-    <LibraryClasses>
-      SiliconWorkaroundLib|WhitleySiliconPkg/Library/SiliconWorkaroundLibNull/SiliconWorkaroundLibNull.inf
-  }
-  $(RP_PKG)/Platform/Pei/EmulationPlatformInit/EmulationPlatformInit.inf
-  $(PLATFORM_PKG)/PlatformInit/PlatformInitPei/PlatformInitPostMem.inf {
-    <LibraryClasses>
-      TestPointCheckLib|MinPlatformPkg/Test/Library/TestPointCheckLibNull/TestPointCheckLibNull.inf
-      BoardInitLib|$(PLATFORM_PKG)/PlatformInit/Library/BoardInitLibNull/BoardInitLibNull.inf
-  }
-
-  IntelFsp2WrapperPkg/FspmWrapperPeim/FspmWrapperPeim.inf
-!if ($(FSP_MODE) == 0)
-  IntelFsp2WrapperPkg/FspsWrapperPeim/FspsWrapperPeim.inf
-  $(RP_PKG)/Platform/Pei/DummyPchSpi/DummyPchSpi.inf
-!endif
-
-  $(RP_PKG)/BiosInfo/BiosInfo.inf
-
-  WhitleySiliconPkg/Pch/SouthClusterLbg/MultiPch/Pei/MultiPchPei.inf
-  UefiCpuPkg/PiSmmCommunication/PiSmmCommunicationPei.inf
-
-  UefiCpuPkg/CpuMpPei/CpuMpPei.inf
-
-  UefiCpuPkg/Universal/Acpi/S3Resume2Pei/S3Resume2Pei.inf {
-    <LibraryClasses>
-    !if gMinPlatformPkgTokenSpaceGuid.PcdPerformanceEnable == TRUE
-      TimerLib|UefiCpuPkg/Library/SecPeiDxeTimerLibUefiCpu/SecPeiDxeTimerLibUefiCpu.inf
-    !endif
-  }
-
 [Components.X64]
   !include MinPlatformPkg/Include/Dsc/CoreDxeInclude.dsc
   ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
