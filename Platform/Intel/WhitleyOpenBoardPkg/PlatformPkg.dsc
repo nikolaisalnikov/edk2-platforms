@@ -781,10 +781,8 @@
 
   $(RP_PKG)/Features/Pci/Dxe/PciPlatform/PciPlatform.inf
 
-!if $(CPUTARGET) == "ICX"
   $(RP_PKG)/Features/Acpi/AcpiPlatform/AcpiPlatform.inf
   $(RP_PKG)/Features/Acpi/AcpiTables/AcpiTables10nm.inf
-!endif
   $(RP_PKG)/Features/AcpiVtd/AcpiVtd.inf
 
   $(PLATFORM_PKG)/Acpi/AcpiSmm/AcpiSmm.inf
