@@ -747,6 +747,7 @@
   !include MinPlatformPkg/Include/Dsc/CoreDxeInclude.dsc
   ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf
   UefiCpuPkg/SecCore/SecCore.inf
+  MdeModulePkg/Core/Pei/PeiMain.inf
 
   $(RP_PKG)/Platform/Dxe/PlatformType/PlatformType.inf
 
