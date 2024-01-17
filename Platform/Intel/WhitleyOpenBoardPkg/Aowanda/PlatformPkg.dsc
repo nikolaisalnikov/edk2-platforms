@@ -77,3 +77,4 @@
   $(RP_PKG)/$(BOARD_NAME)/Uba/TypeAowanda/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
   $(RP_PKG)/$(BOARD_NAME)/Uba/TypeAowanda/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf
   MdeModulePkg/Bus/Pci/SataControllerDxe/SataControllerDxe.inf
+  edk2-platforms/Features/Intel/OutOfBandManagement/IpmiFeaturePkg/BmcAcpiSwChild/BmcAcpiSwChildStandaloneMm.inf
