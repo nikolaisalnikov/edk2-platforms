@@ -13,7 +13,7 @@
   PEI_ARCH                            = IA32
   DXE_ARCH                            = X64
 
-#!include $(RP_PKG)/PlatformPkg.dsc
+!include $(RP_PKG)/PlatformPkg.dsc
 
 #
 # Feature enable/disable flags
@@ -62,8 +62,6 @@
   gLogoFeaturePkgTokenSpaceGuid.PcdLogoFeatureEnable                        |FALSE
   gUserAuthFeaturePkgTokenSpaceGuid.PcdUserAuthenticationFeatureEnable      |FALSE
   gVirtualKeyboardFeaturePkgTokenSpaceGuid.PcdVirtualKeyboardFeatureEnable  |FALSE
-
-  gAsfFeaturePkgTokenSpaceGuid.PcdAsfFeatureEnable |FALSE
 
 !include AdvancedFeaturePkg/Include/AdvancedFeatures.dsc
 
