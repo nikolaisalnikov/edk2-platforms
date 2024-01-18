@@ -128,8 +128,8 @@
   gCpuPkgTokenSpaceGuid.PcdCpuSelectLfpAsBspFlag|TRUE
 
   ## Uncomment for better boot performance
-#  gPerfOptTokenSpaceGuid.PcdPreUefiLegacyEnable|FALSE
-#  gPerfOptTokenSpaceGuid.PcdLocalVideoEnable|FALSE
+  gPerfOptTokenSpaceGuid.PcdPreUefiLegacyEnable|FALSE
+  gPerfOptTokenSpaceGuid.PcdLocalVideoEnable|FALSE
 
   gPlatformTokenSpaceGuid.PcdSupportUnsignedCapsuleImage|TRUE
 
