@@ -19,7 +19,7 @@
 //
 static GPIO_INIT_CONFIG mGpioTableWilsonCityRP [] =
   {
-    {GPIO_SKL_H_GPP_A0,  { GpioPadModeNative1, GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_A_0_LPC_RCIN_N_ESPI_ALERT1_N
+    {GPIO_SKL_H_GPP_A0,  { GpioPadModeGpio, GpioHostOwnDefault,    GpioDirNone,    GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, //GPP_A_0_LPC_RCIN_N_ESPI_ALERT1_N
     {GPIO_SKL_H_GPP_A1,  { GpioPadModeNative1, GpioHostOwnDefault,    GpioDirInOut,    GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_A_1_LPC_LAD0_ESPI_IO0
     {GPIO_SKL_H_GPP_A2,  { GpioPadModeNative1, GpioHostOwnDefault,    GpioDirInOut,    GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_A_2_LPC_LAD1_ESPI_IO1
     {GPIO_SKL_H_GPP_A3,  { GpioPadModeNative1, GpioHostOwnDefault,    GpioDirInOut,    GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_A_3_LPC_LAD2_ESPI_IO2
