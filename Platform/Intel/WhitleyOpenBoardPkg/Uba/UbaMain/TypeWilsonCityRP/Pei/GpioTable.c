@@ -42,31 +42,23 @@ static GPIO_INIT_CONFIG mGpioTableWilsonCityRP [] =
 //  {GPIO_SKL_H_GPP_A21, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirNone, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // TP_PCH_GPP_A_21
 //  {GPIO_SKL_H_GPP_A22, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirNone, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // TP_PCH_GPP_A_22
 //  {GPIO_SKL_H_GPP_A23, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirNone, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // TP_PCH_GPP_A_23
-    {GPIO_SKL_H_GPP_B0,  { GpioPadModeNative1, GpioHostOwnDefault,    GpioDirOut,      GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_0_FM_PCH_CORE_VID_0
-    {GPIO_SKL_H_GPP_B1,  { GpioPadModeNative1, GpioHostOwnDefault,    GpioDirOut,      GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_1_FM_PCH_CORE_VID_1
-    {GPIO_SKL_H_GPP_B2,  { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_2_PU_PCH_VRALERT_N
-//   GPIO_SKL_H_GPP_B3 - Not Owned by BIOS
-//   GPIO_SKL_H_GPP_B4 - Not Owned by BIOS
-//    {GPIO_SKL_H_GPP_B5,  { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_5_FM_PCH_INTERPOSER_SEL1
-//    {GPIO_SKL_H_GPP_B6,  { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_6_FM_PCH_INTERPOSER_SEL2
-//    {GPIO_SKL_H_GPP_B7,  { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_7_TP_PCH_GPP_B_7
-//    {GPIO_SKL_H_GPP_B8,  { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_8_TP_PCH_GPP_B_8
-//    {GPIO_SKL_H_GPP_B9,  { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_9_FM_BOARD_REV_ID2
-//    {GPIO_SKL_H_GPP_B10, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_10_FM_TPM_MOD_PRES_N
-//   GPIO_SKL_H_GPP_B11 - Not Owned by BIOS
-    {GPIO_SKL_H_GPP_B11, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirOut,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},
-    {GPIO_SKL_H_GPP_B12, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_12_TP_SLP_S0_N
-    {GPIO_SKL_H_GPP_B13, { GpioPadModeNative1, GpioHostOwnDefault,    GpioDirOut,      GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_13_RST_PLTRST_N
-    {GPIO_SKL_H_GPP_B14, { GpioPadModeNative1, GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_14_FM_PCH_BIOS_RCVR_SPKR
-    {GPIO_SKL_H_GPP_B15, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_15_FM_CPU_ERR0_PCH_N
-    {GPIO_SKL_H_GPP_B16, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_16_FM_CPU_ERR1_PCH_N
-    {GPIO_SKL_H_GPP_B17, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_17_FM_CPU_ERR2_PCH_N
-    {GPIO_SKL_H_GPP_B18, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_18_FM_NO_REBOOT
-    {GPIO_SKL_H_GPP_B19, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_19_FM_BOARD_SKU_ID5
-    {GPIO_SKL_H_GPP_B20, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirOut,      GpioOutHigh,    GpioIntDis, GpioPlatformReset, GpioTermNone, GpioPadConfigLock}},//GPP_B_20_FM_BIOS_POST_CMPLT_N
-    {GPIO_SKL_H_GPP_B21, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_21_TP_PCH_GPP_B_21
-    {GPIO_SKL_H_GPP_B22, { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_22_FM_PCH_BOOT_BIOS_DEVICE
-    {GPIO_SKL_H_GPP_B23, { GpioPadModeNative2, GpioHostOwnDefault,    GpioDirOut,      GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_B_23_FM_PCH_BMC_THERMTRIP_EXI_STRAP_N
+    {GPIO_SKL_H_GPP_B0,  { GpioPadModeGpio, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermWpu20K, GpioPadConfigLock}}, // PVNN_PCH_AUX (VID0)
+    {GPIO_SKL_H_GPP_B1,  { GpioPadModeGpio, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermWpu20K, GpioPadConfigLock}}, // PVNN_PCH_AUX (VID1)
+    {GPIO_SKL_H_GPP_B2,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirIn, GpioOutLow, GpioIntLevel|GpioIntSci, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // TPM_SPI_IRQ
+    // Для остальных пинов (GPP_B3 - GPP_B10) вы можете использовать "N.C." если они не используются.
+    {GPIO_SKL_H_GPP_B11, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirIn, GpioOutLow, GpioIntLevel|GpioIntSci, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // CPLD_PMBUS_ALERT#
+    {GPIO_SKL_H_GPP_B12, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirIn, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // Test Point
+    {GPIO_SKL_H_GPP_B13, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // Platform Reset
+    {GPIO_SKL_H_GPP_B14, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirInOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermWpd20K, GpioPadConfigLock}}, // J6 (Top Swap Override Strap), JSPI0, SPEAKER_SSB
+    {GPIO_SKL_H_GPP_B15, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirInOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // JOCP (BIF2#), PCH_GPP_B15
+    {GPIO_SKL_H_GPP_B16, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirInOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // JOCP (PWRRBK#), PCH_GPP_B16
+    {GPIO_SKL_H_GPP_B17, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirIn, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // J5 (Flash Descriptor Security Override Strap), BMC GPIOH7, PCH_GPP_B17
+    {GPIO_SKL_H_GPP_B18, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermWpd20K, GpioPadConfigLock}}, // J1 (No Reboot), PCH_GPP_B18
+    {GPIO_SKL_H_GPP_B19, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC GPIOA4, PCH_GPP_B19
+    {GPIO_SKL_H_GPP_B20, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirInOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC GPIOA5, PCH_GPP_B20
+    {GPIO_SKL_H_GPP_B21, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC GPIOA6, PCH_GPP_B21
+    {GPIO_SKL_H_GPP_B22, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermWpd20K, GpioPadConfigLock}}, // Boot BIOS Strap, PCH_GPP_B22
+    {GPIO_SKL_H_GPP_B23, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirInOut, GpioOutLow, GpioIntDis, GpioResetPwrGood, GpioTermWpd20K, GpioPadConfigLock}}, // BMC GPIOF0, FM_PCH_BMC_THERMTRIP_N
     {GPIO_SKL_H_GPP_C2,  { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_C_2_PU_PCH_TLS_ENABLE_STRAP
     {GPIO_SKL_H_GPP_C5,  { GpioPadModeNative1, GpioHostOwnDefault,    GpioDirOut,      GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_C_5_IRQ_SML0_ALERT_N
     {GPIO_SKL_H_GPP_C8,  { GpioPadModeGpio,    GpioHostOwnDefault,    GpioDirIn,       GpioOutLow,     GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},//GPP_C_8_FM_PASSWORD_CLEAR_N
