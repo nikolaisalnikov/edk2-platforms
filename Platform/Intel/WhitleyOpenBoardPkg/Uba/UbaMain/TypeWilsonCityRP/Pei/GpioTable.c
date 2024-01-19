@@ -81,14 +81,14 @@ static GPIO_INIT_CONFIG mGpioTableWilsonCityRP [] =
     {GPIO_SKL_H_GPP_C19, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // CPLD CPU CATERR
     {GPIO_SKL_H_GPP_C20, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC I2C SW
     {GPIO_SKL_H_GPP_C21, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // JOCP (BIF1#)
-    {GPIO_SKL_H_GPP_C22, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntLvlHigh, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // Reserved
-    {GPIO_SKL_H_GPP_C23, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntLvlHigh, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // CPLD (THROTTLE_N)
+    {GPIO_SKL_H_GPP_C22, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntLvlEdgDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // Reserved
+    {GPIO_SKL_H_GPP_C23, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntLvlEdgDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // CPLD (THROTTLE_N)
 
-    {GPIO_SKL_H_GPP_D0,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // JOCP (PRSNTB0#)
-    {GPIO_SKL_H_GPP_D1,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC GPIOAB0 (BIOS POST COMPLETE)
-    {GPIO_SKL_H_GPP_D2,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC GPIOZ1 (RSVD)
-    {GPIO_SKL_H_GPP_D3,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // J4 Enable Socflash (RSVD)
-    {GPIO_SKL_H_GPP_D4,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC GPIOZ2
+    {GPIO_SKL_H_GPP_D0,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // JOCP (PRSNTB0#)
+    {GPIO_SKL_H_GPP_D1,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC GPIOAB0 (BIOS POST COMPLETE)
+    {GPIO_SKL_H_GPP_D2,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC GPIOZ1 (RSVD)
+    {GPIO_SKL_H_GPP_D3,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // J4 Enable Socflash (RSVD)
+    {GPIO_SKL_H_GPP_D4,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC GPIOZ2
     {GPIO_SKL_H_GPP_D5,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // JOCP (PRSNTB1#)
     {GPIO_SKL_H_GPP_D6,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // JOCP (PRSNTB2#)
     {GPIO_SKL_H_GPP_D7,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // JOCP (PRSNTB3#)
@@ -107,10 +107,10 @@ static GPIO_INIT_CONFIG mGpioTableWilsonCityRP [] =
     // {GPIO_SKL_H_GPP_D22, { ... }}, // N.C. (No Connect)
     // {GPIO_SKL_H_GPP_D23, { ... }}  // N.C. (No Connect)
 
-    {GPIO_SKL_H_GPP_E0,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_E0
-    {GPIO_SKL_H_GPP_E1,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_E1
-    {GPIO_SKL_H_GPP_E2,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_E2
-    {GPIO_SKL_H_GPP_E3,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // CPLD (ADR TRIGGER#), FM_ADR_TRIGGER_N
+    {GPIO_SKL_H_GPP_E0,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_E0
+    {GPIO_SKL_H_GPP_E1,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_E1
+    {GPIO_SKL_H_GPP_E2,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_E2
+    {GPIO_SKL_H_GPP_E3,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // CPLD (ADR TRIGGER#), FM_ADR_TRIGGER_N
 
     // Пины GPP_E4 до GPP_E7 отмечены как "N.C.", поэтому для них не требуется конфигурация.
     // Однако, если вы хотите их включить, они будут выглядеть следующим образом:
@@ -118,8 +118,8 @@ static GPIO_INIT_CONFIG mGpioTableWilsonCityRP [] =
     // {GPIO_SKL_H_GPP_E5,  { ... }}, // N.C. (No Connect)
     // {GPIO_SKL_H_GPP_E6,  { ... }}, // N.C. (No Connect)
 
-    {GPIO_SKL_H_GPP_E7,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC_GPY2 (RSVD), FM_ADR_SMI_GPIO_N
-    {GPIO_SKL_H_GPP_E8,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // SATA LED, LED_SATA_ACT_N
+    {GPIO_SKL_H_GPP_E7,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BMC_GPY2 (RSVD), FM_ADR_SMI_GPIO_N
+    {GPIO_SKL_H_GPP_E8,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // SATA LED, LED_SATA_ACT_N
 
     // Пины GPP_E9 до GPP_E12 имеют конкретные функции и не отмечены как "N.C." или "Reserved":
     {GPIO_SKL_H_GPP_E9,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // USB Port 0&1 Overcurrent, USB2_OC1_N
@@ -127,11 +127,11 @@ static GPIO_INIT_CONFIG mGpioTableWilsonCityRP [] =
     // {GPIO_SKL_H_GPP_E11, { ... }}, // Reserved
     // {GPIO_SKL_H_GPP_E12, { ... }}  // Reserved
 
-    {GPIO_SKL_H_GPP_F0,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F0
-    {GPIO_SKL_H_GPP_F1,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F1
-    {GPIO_SKL_H_GPP_F2,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F2
-    {GPIO_SKL_H_GPP_F3,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F3
-    {GPIO_SKL_H_GPP_F4,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F4
+    {GPIO_SKL_H_GPP_F0,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F0
+    {GPIO_SKL_H_GPP_F1,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F1
+    {GPIO_SKL_H_GPP_F2,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F2
+    {GPIO_SKL_H_GPP_F3,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F3
+    {GPIO_SKL_H_GPP_F4,  { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PCIE/SATA Strap, PCH_GPP_F4
     // Пины GPP_F5 до GPP_F7 отмечены как "N.C.", поэтому для них не требуется конфигурация.
     // Однако, если вы хотите их включить, они будут выглядеть следующим образом:
     // {GPIO_SKL_H_GPP_F5,  { ... }}, // N.C. (No Connect)
@@ -158,7 +158,7 @@ static GPIO_INIT_CONFIG mGpioTableWilsonCityRP [] =
     // {GPIO_SKL_H_GPP_F21, { ... }}, // Reserved, LAN_SMBALRT
 
     {GPIO_SKL_H_GPP_F22, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // JSGPIO (SSATA SGPIO CLOCK), SGPIO_SSATA_CLOCK
-    {GPIO_SKL_H_GPP_F23, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}  // JSGPIO (SSATA SGPIO LOAD), SGPIO_SSATA_LOAD
+    {GPIO_SKL_H_GPP_F23, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirNone, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}},  // JSGPIO (SSATA SGPIO LOAD), SGPIO_SSATA_LOAD
 
    // Пины GPP_G0 до GPP_G11 помечены как "N.C." и не требуют конфигурации.
 
@@ -166,9 +166,9 @@ static GPIO_INIT_CONFIG mGpioTableWilsonCityRP [] =
     {GPIO_SKL_H_GPP_G13, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirInOut, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BOARD ID (BMC GPIOA1), BOARD_ID1
     {GPIO_SKL_H_GPP_G14, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirInOut, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // BOARD ID (BMC GPIOA0), BOARD_ID2
     {GPIO_SKL_H_GPP_G17, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirInOut, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // ADR COMPLETE, FM_ADR_COMPLETE
-    {GPIO_SKL_H_GPP_G18, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirOut, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // NMI Output (BMC GPIO5), PCH_NMI_N
+    {GPIO_SKL_H_GPP_G18, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirOut, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // NMI Output (BMC GPIO5), PCH_NMI_N
     // {GPIO_SKL_H_GPP_G19, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirOut, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // SMI Output (BMC GPIOB5), PCH_SMI_N (RSVD)
-    {GPIO_SKL_H_GPP_G20, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirOut, GpioOutDefault, GpioIntNmiSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PMBUS ALERT N, IRQ_SML1_PMBUS_ALERT_N
+    {GPIO_SKL_H_GPP_G20, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirOut, GpioOutDefault, GpioIntSmi, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // PMBUS ALERT N, IRQ_SML1_PMBUS_ALERT_N
 
     // Пины GPP_G21, GPP_G22 и GPP_G23 помечены как "N.C." и не требуют конфигурации.
 
@@ -187,7 +187,7 @@ static GPIO_INIT_CONFIG mGpioTableWilsonCityRP [] =
     {GPIO_SKL_H_GPP_H22, { GpioPadModeNative1, GpioHostOwnDefault, GpioDirInOut, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // M.2 PCIE/SATA Strap, FM_SSATA_PCIE_M2_2_SEL
     // {GPIO_SKL_H_GPP_H23, { ... }}  // N.C. (No Connect)
     {GPIO_SKL_H_GPP_I7, { GpioPadModeGpio, GpioHostOwnDefault, GpioDirInOut, GpioOutDefault, GpioIntDis, GpioResetPwrGood, GpioTermNone, GpioPadConfigLock}}, // Test Point, LAN_TRST_N
-    
+
 };
 
 EFI_STATUS
