@@ -41,7 +41,7 @@ DEFINE VPD_HEADER_SIZE = 0x00000090
 # 16MiB Total FLASH Image (visible in memory mapped IO)
 #
 SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaBaseAddress  = 0xFF000000
-SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
+SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x2000000
 
 ################################################################################
 #
