@@ -4,6 +4,7 @@
 #
 # @copyright
 # Copyright 2006 - 2021 Intel Corporation. <BR>
+# Copyright (c) 2021, American Megatrends International LLC. <BR>
 #
 # SPDX-License-Identifier: BSD-2-Clause-Patent
 ##
@@ -84,7 +85,7 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
   SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvFspSSize          = 0x00040000 # Size must match WhitleyFspPkg.fdf content
   SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvFspMSize          = 0x00221000 # Size must match WhitleyFspPkg.fdf content
   SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvFspTSize          = 0x00006000 # Size must match WhitleyFspPkg.fdf content
-  SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvBspPreMemorySize  = 0x00010000
+  SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvBspPreMemorySize  = 0x00009000
   SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvPreMemorySize     = gCpPlatFlashTokenSpaceGuid.PcdFlashFdSecPeiSize - gMinPlatformPkgTokenSpaceGuid.PcdFlashFvBspSize - gMinPlatformPkgTokenSpaceGuid.PcdFlashFvPostMemorySize - gMinPlatformPkgTokenSpaceGuid.PcdFlashFvFspSSize - gMinPlatformPkgTokenSpaceGuid.PcdFlashFvFspMSize - gMinPlatformPkgTokenSpaceGuid.PcdFlashFvFspTSize - gMinPlatformPkgTokenSpaceGuid.PcdFlashFvBspPreMemorySize
 
   #
@@ -188,7 +189,7 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
   # This makes it easy to adjust the various sizes without having to manually calculate the offsets.
   # These are out of flash layout order because FvAdvanced gets any remaining space
   #
-  SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvSecuritySize      = 0x00010000
+  SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvSecuritySize      = 0x00050000
   SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvOsBootSize        = 0x00230000
   SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvUefiBootSize      = 0x0004C000
   SET gMinPlatformPkgTokenSpaceGuid.PcdFlashFvAdvancedSize      = gCpPlatFlashTokenSpaceGuid.PcdFlashFdMainSize - gMinPlatformPkgTokenSpaceGuid.PcdFlashFvUefiBootSize - gMinPlatformPkgTokenSpaceGuid.PcdFlashFvOsBootSize - gMinPlatformPkgTokenSpaceGuid.PcdFlashFvSecuritySize
@@ -396,6 +397,8 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
   !include MinPlatformPkg/Include/Fdf/CommonSpiFvHeaderInfo.fdf
   FvNameGuid         = 40ab290f-8494-41cf-b302-31b178b4ce0b
 
+  !include MinPlatformPkg/Include/Fdf/CoreSecurityPreMemoryInclude.fdf
+
 [FV.FvPreMemory]
   !include MinPlatformPkg/Include/Fdf/CommonSpiFvHeaderInfo.fdf
   FvNameGuid         = 6522280D-28F9-4131-ADC4-F40EBFA45864
@@ -556,6 +559,12 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
   INF  MdeModulePkg/Bus/Ata/AtaAtapiPassThru/AtaAtapiPassThru.inf
   INF  MdeModulePkg/Universal/MemoryTest/NullMemoryTestDxe/NullMemoryTestDxe.inf
   INF  BoardModulePkg/BoardBdsHookDxe/BoardBdsHookDxe.inf
+  INF  MdeModulePkg/Bus/Pci/SataControllerDxe/SataControllerDxe.inf
+
+  FILE DRIVER = 85299F8F-F2B9-4487-AF60-231434A5EFF6 {
+    SECTION PE32 = edk2-non-osi/Drivers/ASpeed/ASpeedGopBinPkg/X64/ASpeedAst2500Gop.efi
+  }
+
 
 [FV.FvUefiBoot]
   !include MinPlatformPkg/Include/Fdf/CommonSpiFvHeaderInfo.fdf
@@ -592,7 +601,10 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
   # UBA DXE common and board specific components
   #
   !include WhitleyOpenBoardPkg/Uba/UbaDxeCommon.fdf
-  !include WhitleyOpenBoardPkg/Uba/UbaDxeRpBoards.fdf
+  INF $(RP_PKG)/Uba/UbaMain/StaticSkuDataDxe/StaticSkuDataDxe.inf
+  INF $(RP_PKG)/$(BOARD_NAME)/Uba/TypeJunctionCity/Dxe/UsbOcUpdateDxe/UsbOcUpdateDxe.inf
+  INF $(RP_PKG)/$(BOARD_NAME)/Uba/TypeJunctionCity/Dxe/IioCfgUpdateDxe/IioCfgUpdateDxe.inf
+  INF $(RP_PKG)/$(BOARD_NAME)/Uba/TypeJunctionCity/Dxe/SlotDataUpdateDxe/SlotDataUpdateDxe.inf
   INF  WhitleyOpenBoardPkg/Platform/Dxe/PlatformType/PlatformType.inf
   INF  MinPlatformPkg/PlatformInit/PlatformInitDxe/PlatformInitDxe.inf
 
@@ -671,10 +683,8 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
   INF  BoardModulePkg/LegacySioDxe/LegacySioDxe.inf
   INF  MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
 
-!if $(CPUTARGET) == "ICX"
   INF  RuleOverride = ACPITABLE WhitleyOpenBoardPkg/Features/Acpi/AcpiTables/AcpiTables10nm.inf
   INF  WhitleyOpenBoardPkg/Features/Acpi/AcpiPlatform/AcpiPlatform.inf
-!endif
   INF  WhitleyOpenBoardPkg/Features/AcpiVtd/AcpiVtd.inf
   INF  MinPlatformPkg/Acpi/AcpiSmm/AcpiSmm.inf
 
@@ -691,6 +701,8 @@ SET gMinPlatformPkgTokenSpaceGuid.PcdFlashAreaSize         = 0x01000000
 [FV.FvSecuritySilicon]
   !include MinPlatformPkg/Include/Fdf/CommonSpiFvHeaderInfo.fdf
   FvNameGuid         = AD262F8D-BDED-4668-A8D4-8BC73516652F
+
+  !include MinPlatformPkg/Include/Fdf/CoreSecurityLateInclude.fdf
 
 [FV.FvSecurityUncompressed]
   !include MinPlatformPkg/Include/Fdf/CommonSpiFvHeaderInfo.fdf
