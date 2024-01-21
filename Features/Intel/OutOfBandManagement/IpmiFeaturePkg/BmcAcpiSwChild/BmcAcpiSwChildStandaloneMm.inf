@@ -27,7 +27,7 @@
   MdeModulePkg/MdeModulePkg.dec
 
 [LibraryClasses]
-  StandaloneMmDriverEntryPoint
+  #StandaloneMmDriverEntryPoint
   DebugLib
   MmServicesTableLib
   ServerManagementLib
