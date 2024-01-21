@@ -177,7 +177,7 @@ def post_build_ex(config, functions):
     intel_me = os.path.join(ifwi_ingredients_path, "Region_ME_ME_region.bin")
     ptt_desc = os.path.join(ifwi_ingredients_path, "Region_PTT_PTT_region.bin")
     devExp1 = os.path.join(ifwi_ingredients_path, "Region_DevExp1_DevExp1_region.bin")
-    _merge_files((flash_descriptor, intel_me, ptt_desc, devExp1m final_fd), final_ifwi)
+    _merge_files((flash_descriptor, intel_me, ptt_desc, devExp1m, final_fd), final_ifwi)
     if os.path.isfile(final_fd):
         print("IFWI image can be found at {}".format(final_ifwi))
     return None
