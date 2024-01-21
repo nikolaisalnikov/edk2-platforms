@@ -589,7 +589,6 @@
   # MinPlatform uses port 80, we don't want to assume HW
   #
   PostCodeLib|MdePkg/Library/BasePostCodeLibDebug/BasePostCodeLibDebug.inf
-
   TcgPpVendorLib|SecurityPkg/Library/TcgPpVendorLibNull/TcgPpVendorLibNull.inf
   Tcg2PpVendorLib|SecurityPkg/Library/Tcg2PpVendorLibNull/Tcg2PpVendorLibNull.inf
   AslUpdateLib|$(PLATFORM_PKG)/Acpi/Library/DxeAslUpdateLib/DxeAslUpdateLib.inf
@@ -698,6 +697,7 @@
       NULL|$(FSP_BIN_PKG)/Library/FspPcdListLibNull/FspPcdListLibNullFvLateSilicon.inf    # Include FvLateSilicon DynamicEx PCD
       NULL|$(FSP_BIN_PKG)/Library/FspPcdListLibNull/FspPcdListLibNullFvLateOpenBoard.inf  # Include FvLateBoard DynamicEx PCD
   }
+  MdeModulePkg/Bus/Pci/SataControllerDxe/SataControllerDxe.inf
   $(RP_PKG)/Universal/PeiExStatusCodeRouter/ExReportStatusCodeRouterPei.inf
   $(RP_PKG)/Universal/PeiExStatusCodeHandler/ExStatusCodeHandlerPei.inf
   $(RP_PKG)/Universal/PeiInterposerToSvidMap/PeiInterposerToSvidMap.inf
@@ -753,7 +753,7 @@
   MdeModulePkg/Universal/SectionExtractionDxe/SectionExtractionDxe.inf
   MdeModulePkg/Universal/Acpi/S3SaveStateDxe/S3SaveStateDxe.inf
   MdeModulePkg/Universal/Acpi/BootScriptExecutorDxe/BootScriptExecutorDxe.inf
-
+  MdeModulePkg/Bus/Pci/SataControllerDxe/SataControllerDxe.inf
   MdeModulePkg/Universal/LockBox/SmmLockBox/SmmLockBox.inf
   UefiCpuPkg/PiSmmCommunication/PiSmmCommunicationSmm.inf
 
